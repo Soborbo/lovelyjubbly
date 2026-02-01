@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+---
+<BaseLayout
+  title="Contact Painless Removals | Lovely Jubbly Removals"
+  description="Get in touch with Painless Removals for a free quote. Phone, email, or request a callback. Bristol removal services available."
+  canonical="/contact/"
+>
+  <Hero
+    title="Contact Painless Removals"
+    subtitle="Get in touch for a free quote"
+  />
+
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Contact Information -->
+        <div>
+          <h2 class="text-2xl font-bold mb-6">Get in Touch</h2>
+          <p class="text-gray-600 mb-8">
+            Lovely Jubbly Removals has closed, but Painless Removals is ready to help with all your removal needs in Bristol and beyond.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="bg-primary text-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-xl">📞</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg">Phone</h3>
+                <a href="tel:01172870082" class="text-primary hover:underline text-lg">
+                  01172 870 082
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="bg-primary text-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-xl">✉️</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg">Email</h3>
+                <a href="mailto:hello@painlessremovals.com" class="text-primary hover:underline">
+                  hello@painlessremovals.com
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="bg-primary text-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-xl">📍</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg">Address</h3>
+                <p class="text-gray-600">
+                  Painless Removals<br />
+                  290-294 Southmead Rd<br />
+                  Bristol BS10 5EN
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="bg-primary text-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-xl">🕐</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg">Opening Hours</h3>
+                <p class="text-gray-600">
+                  Monday - Friday: 9AM - 5PM<br />
+                  Saturday - Sunday: Closed
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map Placeholder -->
+          <div class="mt-8 bg-gray-200 rounded-lg aspect-video flex items-center justify-center">
+            <span class="text-gray-500">Map Placeholder</span>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div>
+          <h2 class="text-2xl font-bold mb-6">Request a Callback</h2>
+          <form
+            action="/api/callback"
+            method="POST"
+            class="bg-white rounded-xl shadow-lg p-6 lg:p-8 space-y-6 border border-gray-100"
+          >
+            <input type="hidden" name="utm_source" value="lovelyjubbly" />
+            <input type="hidden" name="utm_medium" value="acquired_domain" />
+            <!-- Honeypot field -->
+            <div class="hidden" aria-hidden="true">
+              <label for="website">Website</label>
+              <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">
+                Name <span class="text-secondary">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                placeholder="Your name"
+              />
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+                Phone <span class="text-secondary">*</span>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                placeholder="Your phone number"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                Email (optional)
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                placeholder="Your email address"
+              />
+            </div>
+
+            <div>
+              <label for="callback_time" class="block text-sm font-medium text-gray-700 mb-1">
+                Preferred callback time
+              </label>
+              <select
+                id="callback_time"
+                name="callback_time"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+              >
+                <option value="">Any time</option>
+                <option value="morning">Morning (9AM - 12PM)</option>
+                <option value="afternoon">Afternoon (12PM - 5PM)</option>
+                <option value="evening">Evening (5PM - 7PM)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">
+                Message (optional)
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                placeholder="Tell us about your removal needs..."
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-secondary hover:bg-red-700 text-white py-4 rounded-lg font-semibold text-lg transition-colors"
+            >
+              Request Callback
+            </button>
+
+            <p class="text-xs text-gray-500 text-center">
+              By submitting this form, you agree to our
+              <a href="/privacy-policy/" class="underline">Privacy Policy</a>.
+              Your details will be shared with Painless Removals.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

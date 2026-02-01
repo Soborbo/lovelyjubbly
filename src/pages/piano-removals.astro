@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CallbackForm from '../components/CallbackForm.astro';
+---
+<BaseLayout
+  title="Piano Removals Bristol | Lovely Jubbly Removals"
+  description="Specialist piano removal services in Bristol. Upright and grand pianos moved safely by experienced professionals. Fully insured."
+  canonical="/piano-removals/"
+>
+  <Hero
+    title="Piano Removals Bristol"
+    subtitle="Specialist piano moving with care"
+    showCtas={true}
+  />
+
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="prose prose-lg max-w-none">
+        <p class="text-xl text-gray-600 mb-8">
+          Pianos are among the most challenging items to move. Their weight, size, value, and delicate internal mechanisms demand specialist handling that goes beyond standard removal services.
+        </p>
+
+        <h2 class="text-2xl font-bold mb-4">Why Pianos Need Specialist Movers</h2>
+        <p>
+          A typical upright piano weighs between 200-400kg, while grand pianos can exceed 500kg. Beyond the weight, pianos contain thousands of precisely calibrated parts — hammers, strings, and soundboards that can be damaged by improper handling. A piano moved incorrectly might look fine but play poorly. Regular removal teams aren't equipped or trained for these unique challenges.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Equipment and Expertise</h2>
+        <p>
+          Piano movers use specialised equipment designed for the task. Heavy-duty piano skids, stair climbers, and custom strapping systems allow safe navigation through doorways, around corners, and up or down stairs. Teams know how to distribute weight correctly, protect finished surfaces, and handle the instrument at the right points to avoid structural stress.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Insurance Coverage</h2>
+        <p>
+          Given the value of most pianos — from a few thousand pounds for quality uprights to tens of thousands for grand pianos — proper insurance is essential. Specialist piano movers carry specific coverage for instrument damage, far exceeding standard goods-in-transit policies. Before booking any service, verify their insurance covers the full replacement value of your piano.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Upright and Grand Pianos</h2>
+        <p>
+          Different piano types require different approaches. Upright pianos are moved on their base using piano skids, keeping them vertical throughout. Grand pianos are more complex — the legs and pedal assembly are removed, the piano is carefully tilted onto a special board, wrapped, and transported on its side. Both require trained teams who perform these moves regularly.
+        </p>
+
+        <div class="bg-blue-50 border-l-4 border-primary p-6 mt-8 rounded-r-lg">
+          <p class="font-semibold text-primary mb-2">Moving a piano in Bristol?</p>
+          <p class="text-gray-700">
+            <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">
+              Painless Removals
+            </a>
+            has the expertise and equipment for safe piano transport. Get a specialist quote today.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CallbackForm />
+</BaseLayout>

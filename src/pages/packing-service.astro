@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CallbackForm from '../components/CallbackForm.astro';
+---
+<BaseLayout
+  title="Professional Packing Service Bristol | Lovely Jubbly Removals"
+  description="Expert packing services in Bristol. We pack your home safely with quality materials. Fragile items handled with care. Unpacking service available."
+  canonical="/packing-service/"
+>
+  <Hero
+    title="Professional Packing Service Bristol"
+    subtitle="Let the experts pack your home safely"
+    showCtas={true}
+  />
+
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="prose prose-lg max-w-none">
+        <p class="text-xl text-gray-600 mb-8">
+          Packing is often the most time-consuming part of moving. A professional packing service takes this burden off your shoulders, ensuring everything is wrapped, protected, and ready for transport.
+        </p>
+
+        <h2 class="text-2xl font-bold mb-4">Full Packing Service</h2>
+        <p>
+          A complete packing service handles everything in your home. A trained team arrives with all necessary materials and systematically works through each room, wrapping and boxing items with care. Every box is labelled clearly with contents and destination room. The process is methodical — most homes can be fully packed in a single day, depending on size.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Fragile Items Handling</h2>
+        <p>
+          Delicate items require special attention and materials. China, glassware, mirrors, and artwork each have specific packing techniques. Professional packers use acid-free tissue paper, bubble wrap, picture boxes, and custom crating when needed. Years of experience mean they know exactly how to protect items that would be risky to pack yourself.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Packing Materials Included</h2>
+        <p>
+          Professional packing services supply all materials as part of the service. This includes sturdy removal boxes in various sizes, wardrobe boxes for hanging clothes, packing paper, bubble wrap, tape, and markers. You don't need to source or buy anything — it's all provided and included in the quote.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Unpacking Service Available</h2>
+        <p>
+          The help doesn't have to stop when you arrive at your new home. Unpacking services get you settled faster. The team unpacks boxes, places items where you direct, and removes all packing materials for recycling. You go from a house full of boxes to a functioning home in hours rather than weeks of gradual unpacking.
+        </p>
+
+        <div class="bg-blue-50 border-l-4 border-primary p-6 mt-8 rounded-r-lg">
+          <p class="font-semibold text-primary mb-2">Want professional packing for your move?</p>
+          <p class="text-gray-700">
+            <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">
+              Painless Removals
+            </a>
+            offers comprehensive packing services. Request a quote and make your move easier.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CallbackForm />
+</BaseLayout>

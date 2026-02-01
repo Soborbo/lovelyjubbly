@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import CallbackForm from '../components/CallbackForm.astro';
+
+const services = [
+  {
+    title: 'House Removals',
+    description: 'Professional home moving services across Bristol and beyond.',
+    href: '/house-removals-bristol/',
+    icon: '🏠',
+  },
+  {
+    title: 'Man and Van',
+    description: 'Flexible, affordable moving help for smaller jobs.',
+    href: '/man-and-van/',
+    icon: '🚐',
+  },
+  {
+    title: 'Packing Service',
+    description: 'Expert packing to keep your belongings safe.',
+    href: '/packing-service/',
+    icon: '📦',
+  },
+  {
+    title: 'Self Storage',
+    description: 'Secure storage solutions for any duration.',
+    href: '/self-storage-bristol/',
+    icon: '🔐',
+  },
+  {
+    title: 'Piano Removals',
+    description: 'Specialist piano moving with care and expertise.',
+    href: '/piano-removals/',
+    icon: '🎹',
+  },
+  {
+    title: 'European Removals',
+    description: 'International moves handled professionally.',
+    href: '/european-removals-and-storage/',
+    icon: '🌍',
+  },
+];
+---
+<BaseLayout
+  title="Looking for Bristol Removals? | Lovely Jubbly Removals"
+  description="Lovely Jubbly Removals has closed. For professional removal services in Bristol, contact Painless Removals. House moves, man and van, storage, and more."
+>
+  <Hero
+    title="Looking for Bristol Removals?"
+    subtitle="Lovely Jubbly Removals has closed, but Painless Removals is here to help."
+    showCtas={true}
+  />
+
+  <!-- Services Grid -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-4">Our Services</h2>
+      <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+        While Lovely Jubbly Removals is no longer operating, Painless Removals offers all these services and more.
+      </p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((service) => (
+          <ServiceCard {...service} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-8">Award-Winning Heritage</h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white rounded-xl p-8 shadow-md">
+          <div class="text-5xl mb-4">🏆</div>
+          <h3 class="text-xl font-semibold mb-2">UK Enterprise Award Winner</h3>
+          <p class="text-gray-600">
+            Lovely Jubbly Removals was recognised with UK Enterprise Awards in 2020 and 2021 for outstanding service in the Bristol removal industry.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-8 shadow-md">
+          <div class="text-5xl mb-4">🤝</div>
+          <h3 class="text-xl font-semibold mb-2">Now Served by Painless Removals</h3>
+          <p class="text-gray-600">
+            The same commitment to quality continues with
+            <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline">
+              Painless Removals
+            </a>
+            — trusted Bristol movers ready to help.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CallbackForm />
+</BaseLayout>

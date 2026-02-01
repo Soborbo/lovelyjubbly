@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CallbackForm from '../components/CallbackForm.astro';
+---
+<BaseLayout
+  title="House Removals Bristol | Lovely Jubbly Removals"
+  description="Professional house removal services in Bristol. Full home moving, packing, and transport. Get a free quote from Painless Removals today."
+  canonical="/house-removals-bristol/"
+>
+  <Hero
+    title="House Removals Bristol"
+    subtitle="Professional, reliable home moving services"
+    showCtas={true}
+  />
+
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="prose prose-lg max-w-none">
+        <p class="text-xl text-gray-600 mb-8">
+          Moving house is one of life's biggest undertakings. Having the right removal team makes all the difference between a stressful experience and a smooth transition to your new home.
+        </p>
+
+        <h2 class="text-2xl font-bold mb-4">What's Included in a House Removal</h2>
+        <p>
+          A professional house removal service covers every aspect of moving your belongings safely. This includes careful loading and unloading of furniture, secure transport in well-maintained vehicles, and placement of items in your new home exactly where you want them. Many services also offer furniture disassembly and reassembly for larger pieces that won't fit through doorways.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Why Use Professional Movers</h2>
+        <p>
+          Professional movers bring expertise that comes from handling hundreds of moves. They know how to protect fragile items, navigate tight staircases, and efficiently pack a vehicle to maximise space while preventing damage. Insurance coverage provides peace of mind, and the time saved compared to DIY moving is substantial — most people underestimate how long moving actually takes.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Service Area</h2>
+        <p>
+          House removal services cover Bristol city centre and all surrounding areas including Clifton, Redland, Cotham, Bishopston, Southville, Bedminster, and beyond. Whether you're moving within Bristol or relocating to or from the city, professional help is available for local moves, long-distance relocations, and everything in between.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Transparent Pricing</h2>
+        <p>
+          Reputable removal companies provide clear, upfront quotes with no hidden fees. The cost depends on factors like the size of your home, distance of the move, access requirements, and whether you need additional services like packing. Request a free survey or video call assessment to get an accurate quote for your specific situation.
+        </p>
+
+        <div class="bg-blue-50 border-l-4 border-primary p-6 mt-8 rounded-r-lg">
+          <p class="font-semibold text-primary mb-2">Need a house removal quote?</p>
+          <p class="text-gray-700">
+            Contact
+            <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">
+              Painless Removals
+            </a>
+            for a free, no-obligation quote on your Bristol house move.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CallbackForm />
+</BaseLayout>

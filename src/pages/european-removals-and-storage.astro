@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CallbackForm from '../components/CallbackForm.astro';
+---
+<BaseLayout
+  title="European Removals from Bristol | Lovely Jubbly Removals"
+  description="International removal services from Bristol to Europe. Professional help with overseas moves, customs documentation, and storage during transition."
+  canonical="/european-removals-and-storage/"
+>
+  <Hero
+    title="European Removals from Bristol"
+    subtitle="Moving abroad? We can help."
+    showCtas={true}
+  />
+
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="prose prose-lg max-w-none">
+        <p class="text-xl text-gray-600 mb-8">
+          Relocating to Europe involves more than just transport. International moves require careful planning, proper documentation, and coordination across borders — expertise that goes beyond domestic removals.
+        </p>
+
+        <h2 class="text-2xl font-bold mb-4">Countries Served</h2>
+        <p>
+          European removal services cover destinations across the continent. Popular routes from Bristol include France, Spain, Portugal, Germany, Italy, and the Netherlands. Whether you're moving to a major city or a rural village, professional international movers have networks and experience throughout Europe to ensure your belongings arrive safely.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">What's Involved in International Moves</h2>
+        <p>
+          International relocations require more planning than domestic moves. The timeline is longer — typically several weeks from booking to delivery. Your belongings may travel by road, sea, or a combination. Groupage services (sharing transport with other shipments) offer cost savings for smaller moves, while dedicated vehicles suit full household contents.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Documentation and Customs</h2>
+        <p>
+          Since Brexit, moving personal effects to EU countries involves customs paperwork. You'll need detailed inventories, proof of residence, and various declarations. Experienced international movers handle this documentation, ensuring compliance and preventing delays at borders. They know which items have restrictions and what paperwork each destination country requires.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Storage During Transition</h2>
+        <p>
+          International moves often involve timing gaps — your UK property completes before your European home is ready, or vice versa. Storage solutions bridge these gaps, keeping your belongings safe and accessible. Flexible storage terms mean you only pay for what you need, whether that's a few weeks or several months.
+        </p>
+
+        <div class="bg-blue-50 border-l-4 border-primary p-6 mt-8 rounded-r-lg">
+          <p class="font-semibold text-primary mb-2">Planning a European move?</p>
+          <p class="text-gray-700">
+            <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">
+              Painless Removals
+            </a>
+            can coordinate your international relocation. Contact them for expert advice and a quote.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CallbackForm />
+</BaseLayout>
