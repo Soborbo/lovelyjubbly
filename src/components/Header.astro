@@ -1,0 +1,30 @@
+---
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/house-removals-bristol/', label: 'House Removals' },
+  { href: '/self-storage-bristol/', label: 'Self Storage' },
+  { href: '/man-and-van/', label: 'Man & Van' },
+  { href: '/packing-service/', label: 'Packing' },
+  { href: '/piano-removals/', label: 'Piano Removals' },
+  { href: '/european-removals-and-storage/', label: 'European Removals' },
+  { href: '/contact/', label: 'Contact' },
+];
+---
+<header class="bg-primary text-white">
+  <div class="max-w-7xl mx-auto px-4 py-4">
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+      <a href="/" class="text-xl font-bold hover:opacity-90">
+        Lovely Jubbly Removals
+      </a>
+      <nav>
+        <ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          {navItems.map((item) => (
+            <li>
+              <a href={item.href} class="hover:underline">{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

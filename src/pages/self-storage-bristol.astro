@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CallbackForm from '../components/CallbackForm.astro';
+---
+<BaseLayout
+  title="Self Storage Bristol | Lovely Jubbly Removals"
+  description="Secure self storage solutions in Bristol for homes and businesses. Flexible terms, 24/7 access, climate-controlled units available."
+  canonical="/self-storage-bristol/"
+>
+  <Hero
+    title="Self Storage Bristol"
+    subtitle="Secure storage solutions for homes and businesses"
+    showCtas={true}
+  />
+
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="prose prose-lg max-w-none">
+        <p class="text-xl text-gray-600 mb-8">
+          Whether you're between homes, decluttering, or need extra space for your business, self storage provides a flexible solution that works around your needs.
+        </p>
+
+        <h2 class="text-2xl font-bold mb-4">Types of Storage</h2>
+        <p>
+          Storage facilities cater to diverse needs. Domestic customers often store furniture during renovations, seasonal items, or belongings during a house move. Business storage suits companies needing space for stock, equipment, or archived documents. Student storage offers term-time solutions for university students who need somewhere safe for their belongings during holidays.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Security Features</h2>
+        <p>
+          Modern storage facilities prioritise security with multiple layers of protection. Expect 24-hour CCTV monitoring, individual unit alarms, secure access codes, and well-lit premises. Many facilities have on-site staff during business hours and robust perimeter fencing. Your belongings are protected by comprehensive insurance options for complete peace of mind.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Flexible Terms</h2>
+        <p>
+          Self storage adapts to your timeline. Most facilities offer contracts from as little as one week, with the flexibility to extend as needed. There are typically no long-term commitments required, and you can often upgrade or downgrade your unit size as your storage needs change. Access hours vary — many offer extended or even 24/7 access.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Choosing the Right Unit Size</h2>
+        <p>
+          Selecting the right unit prevents paying for space you don't need while ensuring everything fits. A small locker suits documents and small items. A unit equivalent to a garden shed stores furniture from a small flat. Larger units accommodate entire house contents. Storage consultants can help estimate your requirements based on an inventory of what you're storing.
+        </p>
+
+        <div class="bg-blue-50 border-l-4 border-primary p-6 mt-8 rounded-r-lg">
+          <p class="font-semibold text-primary mb-2">Looking for storage in Bristol?</p>
+          <p class="text-gray-700">
+            Contact
+            <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">
+              Painless Removals
+            </a>
+            to discuss your storage requirements and find the right solution.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CallbackForm />
+</BaseLayout>

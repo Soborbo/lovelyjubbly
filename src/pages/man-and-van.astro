@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CallbackForm from '../components/CallbackForm.astro';
+---
+<BaseLayout
+  title="Man and Van Bristol | Lovely Jubbly Removals"
+  description="Affordable man and van hire in Bristol. Perfect for small moves, single items, student relocations. Flexible, reliable service."
+  canonical="/man-and-van/"
+>
+  <Hero
+    title="Man and Van Bristol"
+    subtitle="Affordable, flexible moving help"
+    showCtas={true}
+  />
+
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="prose prose-lg max-w-none">
+        <p class="text-xl text-gray-600 mb-8">
+          Not every move needs a full removal crew. Man and van services offer a practical, cost-effective option for smaller jobs where you need professional help without the full removal package.
+        </p>
+
+        <h2 class="text-2xl font-bold mb-4">What is a Man and Van Service?</h2>
+        <p>
+          Man and van combines a professional driver with a suitable vehicle for moving your items. Unlike full removal services, you typically help with loading and might do your own packing. It's the middle ground between hiring a van yourself and booking a complete removal team. You get experience and proper equipment at a fraction of the cost.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Ideal For</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Small moves:</strong> Studio flats, single rooms, or moving a few pieces of furniture</li>
+          <li><strong>Single items:</strong> Bought a sofa online? Need a wardrobe delivered? Man and van handles one-off items</li>
+          <li><strong>Student moves:</strong> End of term clear-outs or moving into new digs</li>
+          <li><strong>eBay and marketplace collections:</strong> Collecting purchases that won't fit in your car</li>
+          <li><strong>Office furniture:</strong> Moving desks, chairs, or equipment between locations</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">What's Included</h2>
+        <p>
+          A standard man and van service includes the driver's time, fuel costs, and use of the vehicle. Most operators carry basic moving equipment like trolleys, straps, and blankets. Goods-in-transit insurance protects your items during the move. Some services offer additional helpers at extra cost if you need more hands for heavier items.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Pricing Structure</h2>
+        <p>
+          Man and van services typically charge by the hour, with a minimum booking period (usually two hours). Rates vary based on van size and the number of helpers. Some operators offer fixed prices for specific routes or job types. Getting a few quotes helps you compare options and find the best value for your particular move.
+        </p>
+
+        <div class="bg-blue-50 border-l-4 border-primary p-6 mt-8 rounded-r-lg">
+          <p class="font-semibold text-primary mb-2">Need a man and van in Bristol?</p>
+          <p class="text-gray-700">
+            <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">
+              Painless Removals
+            </a>
+            offers flexible man and van services at competitive rates. Get in touch for a quote.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CallbackForm />
+</BaseLayout>
