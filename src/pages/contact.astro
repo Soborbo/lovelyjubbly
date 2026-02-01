@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+
+const url = new URL(Astro.request.url);
+const success = url.searchParams.get('success') === 'true';
 ---
 <BaseLayout
   title="Contact Painless Removals | Lovely Jubbly Removals"
@@ -84,6 +87,22 @@ import Hero from '../components/Hero.astro';
         <!-- Contact Form -->
         <div>
           <h2 class="text-2xl font-bold mb-6">Request a Callback</h2>
+
+          {success && (
+            <div class="bg-green-50 border border-green-200 rounded-xl p-6 mb-6">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-2xl">✓</span>
+                <h3 class="font-semibold text-green-800 text-lg">Thank you!</h3>
+              </div>
+              <p class="text-green-700">
+                Your callback request has been received. Painless Removals will be in touch soon.
+              </p>
+              <p class="text-green-600 text-sm mt-2">
+                Need immediate help? Call <a href="tel:01172870082" class="font-semibold underline">01172 870 082</a>
+              </p>
+            </div>
+          )}
+
           <form
             action="/api/callback"
             method="POST"
