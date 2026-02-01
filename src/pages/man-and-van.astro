@@ -2,57 +2,311 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import CallbackForm from '../components/CallbackForm.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Man and Van Bristol",
+  "description": "Affordable man and van hire in Bristol for small moves, single items, and flexible moving help.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Painless Removals",
+    "telephone": "01172 870 082"
+  },
+  "areaServed": { "@type": "City", "name": "Bristol" },
+  "serviceType": "Man and Van"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lovelyjubblyremovals.co.uk/" },
+    { "@type": "ListItem", "position": 2, "name": "Man and Van Bristol", "item": "https://lovelyjubblyremovals.co.uk/man-and-van/" }
+  ]
+};
 ---
 <BaseLayout
-  title="Man and Van Bristol | Lovely Jubbly Removals"
-  description="Affordable man and van hire in Bristol. Perfect for small moves, single items, student relocations. Flexible, reliable service."
+  title="Man and Van Bristol | Affordable Moving Help | Lovely Jubbly Removals"
+  description="Affordable man and van hire in Bristol. Perfect for small moves, single items, student relocations, eBay collections. Hourly rates, fully insured, reliable service. Call 01172 870 082 for a quote."
   canonical="/man-and-van/"
+  schema={[serviceSchema, breadcrumbSchema]}
 >
   <Hero
     title="Man and Van Bristol"
-    subtitle="Affordable, flexible moving help"
+    subtitle="Affordable, flexible moving help for smaller jobs"
     showCtas={true}
   />
 
-  <section class="py-16">
+  <!-- Introduction -->
+  <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="prose prose-lg max-w-none">
-        <p class="text-xl text-gray-600 mb-8">
-          Not every move needs a full removal crew. Man and van services offer a practical, cost-effective option for smaller jobs where you need professional help without the full removal package.
-        </p>
+      <p class="text-xl text-gray-600 mb-8">
+        Not every move needs a full removal crew. Man and van services offer a practical, cost-effective option for smaller jobs where you need professional help without the full removal package. Whether you're moving a few items across Bristol or collecting a purchase from a seller, man and van gives you flexibility and affordability.
+      </p>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mb-4">What is a Man and Van Service?</h2>
+  <!-- What is Man and Van -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">What is a Man and Van Service?</h2>
+      <div class="prose prose-lg max-w-none text-gray-600">
+        <p class="mb-6">
+          Man and van combines a professional driver with a suitable vehicle for moving your items. Unlike full removal services, you may help with loading (though many operators offer full loading assistance), and you typically handle your own packing beforehand. It's the middle ground between hiring a van yourself and booking a complete removal team.
+        </p>
         <p>
-          Man and van combines a professional driver with a suitable vehicle for moving your items. Unlike full removal services, you typically help with loading and might do your own packing. It's the middle ground between hiring a van yourself and booking a complete removal team. You get experience and proper equipment at a fraction of the cost.
+          The service suits people who need more than their own car can carry but don't have enough belongings to justify a full house removal. You get experience and proper equipment at a fraction of the cost, with the flexibility to book by the hour.
         </p>
+      </div>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Ideal For</h2>
-        <ul class="list-disc pl-6 space-y-2">
-          <li><strong>Small moves:</strong> Studio flats, single rooms, or moving a few pieces of furniture</li>
-          <li><strong>Single items:</strong> Bought a sofa online? Need a wardrobe delivered? Man and van handles one-off items</li>
-          <li><strong>Student moves:</strong> End of term clear-outs or moving into new digs</li>
-          <li><strong>eBay and marketplace collections:</strong> Collecting purchases that won't fit in your car</li>
-          <li><strong>Office furniture:</strong> Moving desks, chairs, or equipment between locations</li>
-        </ul>
+  <!-- Ideal For -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">When to Use Man and Van</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <div class="text-3xl mb-4">🏠</div>
+          <h3 class="font-semibold text-lg mb-2">Small Moves</h3>
+          <p class="text-gray-600 text-sm">Studio flats, single rooms, or moving a few pieces of furniture between properties.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <div class="text-3xl mb-4">🛋️</div>
+          <h3 class="font-semibold text-lg mb-2">Single Items</h3>
+          <p class="text-gray-600 text-sm">Bought a sofa, bed, or wardrobe that won't fit in your car? Man and van handles delivery.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <div class="text-3xl mb-4">🎓</div>
+          <h3 class="font-semibold text-lg mb-2">Student Moves</h3>
+          <p class="text-gray-600 text-sm">End of term clear-outs, moving into halls or shared houses at university.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <div class="text-3xl mb-4">📦</div>
+          <h3 class="font-semibold text-lg mb-2">eBay & Marketplace</h3>
+          <p class="text-gray-600 text-sm">Collecting purchases from sellers when items are too large for your own vehicle.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <div class="text-3xl mb-4">💼</div>
+          <h3 class="font-semibold text-lg mb-2">Office Items</h3>
+          <p class="text-gray-600 text-sm">Moving desks, chairs, filing cabinets, or equipment between office locations.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <div class="text-3xl mb-4">🏪</div>
+          <h3 class="font-semibold text-lg mb-2">Shop Deliveries</h3>
+          <p class="text-gray-600 text-sm">Store purchases from IKEA, DFS, or other retailers when delivery isn't available.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">What's Included</h2>
+  <!-- What's Included -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">What's Included</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">👤</span>
+          </div>
+          <h3 class="font-semibold mb-2">Professional Driver</h3>
+          <p class="text-gray-600 text-sm">Experienced, vetted operators who know the local area</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🚐</span>
+          </div>
+          <h3 class="font-semibold mb-2">Suitable Vehicle</h3>
+          <p class="text-gray-600 text-sm">Clean, well-maintained vans sized for your job</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">⛽</span>
+          </div>
+          <h3 class="font-semibold mb-2">Fuel Included</h3>
+          <p class="text-gray-600 text-sm">No surprise fuel charges — it's all in the quote</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🛡️</span>
+          </div>
+          <h3 class="font-semibold mb-2">Insurance</h3>
+          <p class="text-gray-600 text-sm">Goods-in-transit coverage for your belongings</p>
+        </div>
+      </div>
+      <div class="mt-8 bg-white p-6 rounded-xl max-w-2xl mx-auto">
+        <h3 class="font-semibold mb-4 text-center">Additional Equipment Usually Available:</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-600">
+          <div class="text-center">
+            <span class="text-xl block mb-1">🛒</span>
+            Trolleys
+          </div>
+          <div class="text-center">
+            <span class="text-xl block mb-1">🧵</span>
+            Straps
+          </div>
+          <div class="text-center">
+            <span class="text-xl block mb-1">🛏️</span>
+            Blankets
+          </div>
+          <div class="text-center">
+            <span class="text-xl block mb-1">📐</span>
+            Ramps
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Man and Van Pricing</h2>
+      <div class="prose prose-lg max-w-none text-gray-600">
+        <p class="mb-6">
+          Man and van services typically charge by the hour, making them cost-effective for smaller, quicker jobs. Here's what affects the price:
+        </p>
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-semibold text-gray-900 mb-3">Pricing Factors</h3>
+            <ul class="space-y-2 text-sm">
+              <li><strong>Time:</strong> Hourly rate × hours needed</li>
+              <li><strong>Van size:</strong> Larger vans cost more</li>
+              <li><strong>Helpers:</strong> Extra pair of hands available</li>
+              <li><strong>Distance:</strong> Longer journeys may affect rates</li>
+              <li><strong>Access:</strong> Stairs or difficult parking</li>
+            </ul>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-semibold text-gray-900 mb-3">Typical Minimums</h3>
+            <ul class="space-y-2 text-sm">
+              <li><strong>Minimum booking:</strong> Usually 1-2 hours</li>
+              <li><strong>Small van:</strong> Suits boxes and small items</li>
+              <li><strong>Medium van:</strong> Most popular for moves</li>
+              <li><strong>Large van:</strong> For bigger jobs</li>
+            </ul>
+          </div>
+        </div>
         <p>
-          A standard man and van service includes the driver's time, fuel costs, and use of the vehicle. Most operators carry basic moving equipment like trolleys, straps, and blankets. Goods-in-transit insurance protects your items during the move. Some services offer additional helpers at extra cost if you need more hands for heavier items.
+          Getting a few quotes helps you compare options and find the best value for your particular move. Be specific about what you're moving and any access challenges to get accurate estimates.
         </p>
+      </div>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Pricing Structure</h2>
-        <p>
-          Man and van services typically charge by the hour, with a minimum booking period (usually two hours). Rates vary based on van size and the number of helpers. Some operators offer fixed prices for specific routes or job types. Getting a few quotes helps you compare options and find the best value for your particular move.
+  <!-- Man and Van vs Full Removal -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Man and Van vs Full Removal Service</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white rounded-xl shadow-sm">
+          <thead>
+            <tr class="border-b">
+              <th class="text-left p-4 font-semibold">Feature</th>
+              <th class="text-center p-4 font-semibold">Man and Van</th>
+              <th class="text-center p-4 font-semibold">Full Removal</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm">
+            <tr class="border-b">
+              <td class="p-4">Best for</td>
+              <td class="p-4 text-center">Small moves, single items</td>
+              <td class="p-4 text-center">Full house moves</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-4">Pricing</td>
+              <td class="p-4 text-center">Hourly</td>
+              <td class="p-4 text-center">Fixed quote</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-4">Packing</td>
+              <td class="p-4 text-center">You pack</td>
+              <td class="p-4 text-center">Optional service</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-4">Loading help</td>
+              <td class="p-4 text-center">Varies by operator</td>
+              <td class="p-4 text-center">Fully managed</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-4">Team size</td>
+              <td class="p-4 text-center">1-2 people</td>
+              <td class="p-4 text-center">2-4+ people</td>
+            </tr>
+            <tr>
+              <td class="p-4">Cost</td>
+              <td class="p-4 text-center text-green-600 font-medium">Lower</td>
+              <td class="p-4 text-center">Higher</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-gray-600 text-center mt-6">
+        Not sure which you need? Contact us and we'll recommend the best option for your situation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Tips for a Smooth Man and Van Move</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+          <div>
+            <h3 class="font-semibold mb-1">Have everything packed and ready</h3>
+            <p class="text-gray-600 text-sm">The clock starts when they arrive, so be prepared to start loading immediately.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+          <div>
+            <h3 class="font-semibold mb-1">Be accurate about what you're moving</h3>
+            <p class="text-gray-600 text-sm">List large items and approximate number of boxes to ensure the right van size.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+          <div>
+            <h3 class="font-semibold mb-1">Mention any access issues</h3>
+            <p class="text-gray-600 text-sm">Stairs, narrow doors, parking restrictions — tell them upfront.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+          <div>
+            <h3 class="font-semibold mb-1">Confirm insurance coverage</h3>
+            <p class="text-gray-600 text-sm">Check what's covered and consider your own contents insurance too.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">5</div>
+          <div>
+            <h3 class="font-semibold mb-1">Be available to help if needed</h3>
+            <p class="text-gray-600 text-sm">Even if they do the lifting, you may need to direct placement at the destination.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-blue-50 border-l-4 border-primary p-8 rounded-r-lg">
+        <h2 class="text-2xl font-bold text-primary mb-4">Need a Man and Van in Bristol?</h2>
+        <p class="text-gray-700 mb-6">
+          <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">Painless Removals</a> offers flexible man and van services at competitive rates. Whether it's a small flat move, single item delivery, or eBay collection, they've got you covered with reliable, insured service.
         </p>
-
-        <div class="bg-blue-50 border-l-4 border-primary p-6 mt-8 rounded-r-lg">
-          <p class="font-semibold text-primary mb-2">Need a man and van in Bristol?</p>
-          <p class="text-gray-700">
-            <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">
-              Painless Removals
-            </a>
-            offers flexible man and van services at competitive rates. Get in touch for a quote.
-          </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="tel:01172870082" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+            Call 01172 870 082
+          </a>
+          <a href="#callback-form" class="inline-flex items-center justify-center px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-red-700 transition-colors">
+            Request Callback
+          </a>
         </div>
       </div>
     </div>
