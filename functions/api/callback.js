@@ -43,7 +43,7 @@ This enquiry came from lovelyjubblyremovals.co.uk
       `.trim();
 
       try {
-        await fetch('https://api.resend.com/emails', {
+        const response = await fetch('https://api.resend.com/emails', {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${resendApiKey}`,
@@ -56,6 +56,13 @@ This enquiry came from lovelyjubblyremovals.co.uk
             text: emailBody,
           }),
         });
+
+        if (!response.ok) {
+          const errorData = await response.text();
+          console.error('Resend API error:', response.status, errorData);
+        } else {
+          console.log('Email sent successfully');
+        }
       } catch (emailError) {
         console.error('Failed to send email:', emailError);
       }
