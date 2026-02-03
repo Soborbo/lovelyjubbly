@@ -2,35 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import CallbackForm from '../components/CallbackForm.astro';
-
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Man and Van Bristol",
-  "description": "Affordable man and van hire in Bristol for small moves, single items, and flexible moving help.",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Painless Removals",
-    "telephone": "01172 870 082"
-  },
-  "areaServed": { "@type": "City", "name": "Bristol" },
-  "serviceType": "Man and Van"
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lovelyjubblyremovals.co.uk/" },
-    { "@type": "ListItem", "position": 2, "name": "Man and Van Bristol", "item": "https://lovelyjubblyremovals.co.uk/man-and-van/" }
-  ]
-};
 ---
 <BaseLayout
   title="Man and Van Bristol | Affordable Moving Help | Lovely Jubbly Removals"
   description="Affordable man and van hire in Bristol. Perfect for small moves, single items, student relocations, eBay collections. Hourly rates, fully insured, reliable service. Call 01172 870 082 for a quote."
   canonical="/man-and-van/"
-  schema={[serviceSchema, breadcrumbSchema]}
+  slug="man-and-van"
+  breadcrumbName="Man and Van Bristol"
 >
   <Hero
     title="Man and Van Bristol"

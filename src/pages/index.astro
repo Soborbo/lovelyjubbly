@@ -66,23 +66,11 @@ const faqs = [
   }
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
-};
 ---
 <BaseLayout
   title="Bristol Removals | House Moves, Man & Van, Storage | Lovely Jubbly Removals"
   description="Looking for removal services in Bristol? Lovely Jubbly Removals has closed but Painless Removals continues the tradition. House removals, man and van, packing, storage, piano moves & European relocations. Call 01172 870 082."
-  schema={faqSchema}
+  faqItems={faqs}
 >
   <Hero
     title="Looking for Bristol Removals?"

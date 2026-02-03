@@ -2,38 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import CallbackForm from '../components/CallbackForm.astro';
-
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Self Storage Bristol",
-  "description": "Secure self storage units in Bristol for domestic and business use. Flexible terms, 24/7 CCTV, various unit sizes available.",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Painless Removals",
-    "telephone": "01172 870 082"
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": "Bristol"
-  },
-  "serviceType": "Self Storage"
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lovelyjubblyremovals.co.uk/" },
-    { "@type": "ListItem", "position": 2, "name": "Self Storage Bristol", "item": "https://lovelyjubblyremovals.co.uk/self-storage-bristol/" }
-  ]
-};
 ---
 <BaseLayout
   title="Self Storage Bristol | Secure Storage Units | Lovely Jubbly Removals"
   description="Secure self storage in Bristol for homes and businesses. Flexible terms from 1 week, 24/7 CCTV monitoring, various unit sizes. Domestic, business, and student storage available. Get a quote today."
   canonical="/self-storage-bristol/"
-  schema={[serviceSchema, breadcrumbSchema]}
+  slug="self-storage-bristol"
+  breadcrumbName="Self Storage Bristol"
 >
   <Hero
     title="Self Storage Bristol"

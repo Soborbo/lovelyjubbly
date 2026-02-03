@@ -2,35 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import CallbackForm from '../components/CallbackForm.astro';
-
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Packing Service Bristol",
-  "description": "Professional packing services in Bristol for house moves. Expert packing of fragile items, quality materials provided, unpacking service available.",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Painless Removals",
-    "telephone": "01172 870 082"
-  },
-  "areaServed": { "@type": "City", "name": "Bristol" },
-  "serviceType": "Packing Service"
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lovelyjubblyremovals.co.uk/" },
-    { "@type": "ListItem", "position": 2, "name": "Packing Service", "item": "https://lovelyjubblyremovals.co.uk/packing-service/" }
-  ]
-};
 ---
 <BaseLayout
   title="Professional Packing Service Bristol | Expert Home Packing | Lovely Jubbly Removals"
   description="Professional packing services in Bristol for house moves. Expert handling of fragile items, quality materials included, unpacking service available. Let experienced packers prepare your home safely. Call 01172 870 082."
   canonical="/packing-service/"
-  schema={[serviceSchema, breadcrumbSchema]}
+  slug="packing-service"
+  breadcrumbName="Packing Service"
 >
   <Hero
     title="Professional Packing Service Bristol"
