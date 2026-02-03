@@ -2,55 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import CallbackForm from '../components/CallbackForm.astro';
-
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "House Removals Bristol",
-  "description": "Professional house removal services in Bristol. Full home moving including packing, transport, and furniture assembly.",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Painless Removals",
-    "telephone": "01172 870 082",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "290-294 Southmead Rd",
-      "addressLocality": "Bristol",
-      "postalCode": "BS10 5EN",
-      "addressCountry": "GB"
-    }
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": "Bristol"
-  },
-  "serviceType": "House Removal"
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://lovelyjubblyremovals.co.uk/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "House Removals Bristol",
-      "item": "https://lovelyjubblyremovals.co.uk/house-removals-bristol/"
-    }
-  ]
-};
 ---
 <BaseLayout
   title="House Removals Bristol | Professional Home Moving Services | Lovely Jubbly Removals"
   description="Professional house removal services in Bristol. Experienced movers, full insurance, competitive prices. Local moves, long-distance relocations, packing services. Free quotes from Painless Removals. Call 01172 870 082."
   canonical="/house-removals-bristol/"
-  schema={[serviceSchema, breadcrumbSchema]}
+  slug="house-removals-bristol"
+  breadcrumbName="House Removals Bristol"
 >
   <Hero
     title="House Removals Bristol"

@@ -2,35 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import CallbackForm from '../components/CallbackForm.astro';
-
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Piano Removals Bristol",
-  "description": "Specialist piano removal services in Bristol. Safe transport of upright pianos, grand pianos, and digital pianos. Fully insured with experienced handlers.",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Painless Removals",
-    "telephone": "01172 870 082"
-  },
-  "areaServed": { "@type": "City", "name": "Bristol" },
-  "serviceType": "Piano Removal"
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lovelyjubblyremovals.co.uk/" },
-    { "@type": "ListItem", "position": 2, "name": "Piano Removals", "item": "https://lovelyjubblyremovals.co.uk/piano-removals/" }
-  ]
-};
 ---
 <BaseLayout
   title="Piano Removals Bristol | Specialist Piano Movers | Lovely Jubbly Removals"
   description="Specialist piano removal services in Bristol. Upright and grand pianos moved safely by experienced professionals. Specialist equipment, full insurance, competitive prices. Call 01172 870 082 for a quote."
   canonical="/piano-removals/"
-  schema={[serviceSchema, breadcrumbSchema]}
+  slug="piano-removals"
+  breadcrumbName="Piano Removals"
 >
   <Hero
     title="Piano Removals Bristol"

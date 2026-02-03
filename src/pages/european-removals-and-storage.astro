@@ -2,42 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import CallbackForm from '../components/CallbackForm.astro';
-
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "European Removals from Bristol",
-  "description": "International removal services from Bristol to Europe. Door-to-door moves, customs documentation handled, storage during transition available.",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Painless Removals",
-    "telephone": "01172 870 082"
-  },
-  "areaServed": [
-    { "@type": "Country", "name": "France" },
-    { "@type": "Country", "name": "Spain" },
-    { "@type": "Country", "name": "Portugal" },
-    { "@type": "Country", "name": "Germany" },
-    { "@type": "Country", "name": "Italy" },
-    { "@type": "Country", "name": "Netherlands" }
-  ],
-  "serviceType": "International Removal"
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lovelyjubblyremovals.co.uk/" },
-    { "@type": "ListItem", "position": 2, "name": "European Removals", "item": "https://lovelyjubblyremovals.co.uk/european-removals-and-storage/" }
-  ]
-};
 ---
 <BaseLayout
   title="European Removals from Bristol | International Moving Services | Lovely Jubbly Removals"
   description="International removal services from Bristol to Europe. Moving to France, Spain, Portugal, Germany, Italy or beyond? Door-to-door service, customs handled, storage available. Call 01172 870 082."
   canonical="/european-removals-and-storage/"
-  schema={[serviceSchema, breadcrumbSchema]}
+  slug="european-removals-and-storage"
+  breadcrumbName="European Removals"
 >
   <Hero
     title="European Removals from Bristol"
