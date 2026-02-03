@@ -2,54 +2,325 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import CallbackForm from '../components/CallbackForm.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Self Storage Bristol",
+  "description": "Secure self storage units in Bristol for domestic and business use. Flexible terms, 24/7 CCTV, various unit sizes available.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Painless Removals",
+    "telephone": "01172 870 082"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Bristol"
+  },
+  "serviceType": "Self Storage"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lovelyjubblyremovals.co.uk/" },
+    { "@type": "ListItem", "position": 2, "name": "Self Storage Bristol", "item": "https://lovelyjubblyremovals.co.uk/self-storage-bristol/" }
+  ]
+};
 ---
 <BaseLayout
-  title="Self Storage Bristol | Lovely Jubbly Removals"
-  description="Secure self storage solutions in Bristol for homes and businesses. Flexible terms, 24/7 access, climate-controlled units available."
+  title="Self Storage Bristol | Secure Storage Units | Lovely Jubbly Removals"
+  description="Secure self storage in Bristol for homes and businesses. Flexible terms from 1 week, 24/7 CCTV monitoring, various unit sizes. Domestic, business, and student storage available. Get a quote today."
   canonical="/self-storage-bristol/"
+  schema={[serviceSchema, breadcrumbSchema]}
 >
   <Hero
     title="Self Storage Bristol"
-    subtitle="Secure storage solutions for homes and businesses"
+    subtitle="Secure, flexible storage solutions for homes and businesses"
     showCtas={true}
   />
 
-  <section class="py-16">
+  <!-- Introduction -->
+  <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="prose prose-lg max-w-none">
-        <p class="text-xl text-gray-600 mb-8">
-          Whether you're between homes, decluttering, or need extra space for your business, self storage provides a flexible solution that works around your needs.
-        </p>
+      <p class="text-xl text-gray-600 mb-8">
+        Whether you're between homes, decluttering, renovating, or need extra space for your business, self storage provides a flexible solution that works around your needs. Bristol's storage facilities offer secure, accessible units for short or long-term use.
+      </p>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mb-4">Types of Storage</h2>
-        <p>
-          Storage facilities cater to diverse needs. Domestic customers often store furniture during renovations, seasonal items, or belongings during a house move. Business storage suits companies needing space for stock, equipment, or archived documents. Student storage offers term-time solutions for university students who need somewhere safe for their belongings during holidays.
-        </p>
+  <!-- Storage Types -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Types of Storage Available</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+          <div class="text-4xl mb-4">🏠</div>
+          <h3 class="text-xl font-semibold mb-4">Domestic Storage</h3>
+          <p class="text-gray-600 mb-4">Perfect for homeowners and renters who need extra space.</p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li>• Furniture during renovations</li>
+            <li>• Belongings between moves</li>
+            <li>• Seasonal items (garden furniture, decorations)</li>
+            <li>• Inherited items you're not ready to sort</li>
+            <li>• Downsizing overflow</li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+          <div class="text-4xl mb-4">💼</div>
+          <h3 class="text-xl font-semibold mb-4">Business Storage</h3>
+          <p class="text-gray-600 mb-4">Cost-effective space for commercial needs.</p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li>• Stock and inventory</li>
+            <li>• Office equipment and furniture</li>
+            <li>• Archived documents and records</li>
+            <li>• Tools and trade equipment</li>
+            <li>• E-commerce fulfilment</li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+          <div class="text-4xl mb-4">🎓</div>
+          <h3 class="text-xl font-semibold mb-4">Student Storage</h3>
+          <p class="text-gray-600 mb-4">Flexible options for university students.</p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li>• Summer vacation storage</li>
+            <li>• Year abroad storage</li>
+            <li>• Moving between accommodation</li>
+            <li>• Affordable small units</li>
+            <li>• Collection and delivery options</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Security Features</h2>
-        <p>
-          Modern storage facilities prioritise security with multiple layers of protection. Expect 24-hour CCTV monitoring, individual unit alarms, secure access codes, and well-lit premises. Many facilities have on-site staff during business hours and robust perimeter fencing. Your belongings are protected by comprehensive insurance options for complete peace of mind.
-        </p>
+  <!-- Security Features -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Security You Can Trust</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="text-center p-6">
+          <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">📹</span>
+          </div>
+          <h3 class="font-semibold mb-2">24/7 CCTV</h3>
+          <p class="text-gray-600 text-sm">Round-the-clock video monitoring of all areas</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🚨</span>
+          </div>
+          <h3 class="font-semibold mb-2">Individual Alarms</h3>
+          <p class="text-gray-600 text-sm">Each unit has its own alarm system</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🔐</span>
+          </div>
+          <h3 class="font-semibold mb-2">Secure Access</h3>
+          <p class="text-gray-600 text-sm">PIN codes and controlled entry points</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🛡️</span>
+          </div>
+          <h3 class="font-semibold mb-2">Insurance Options</h3>
+          <p class="text-gray-600 text-sm">Contents insurance available for peace of mind</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Flexible Terms</h2>
-        <p>
-          Self storage adapts to your timeline. Most facilities offer contracts from as little as one week, with the flexibility to extend as needed. There are typically no long-term commitments required, and you can often upgrade or downgrade your unit size as your storage needs change. Access hours vary — many offer extended or even 24/7 access.
-        </p>
+  <!-- Unit Sizes -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Choosing the Right Unit Size</h2>
+      <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+        Storage units come in various sizes to match your needs. Here's a guide to help you choose:
+      </p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="bg-blue-100 text-primary font-bold text-lg px-3 py-1 rounded inline-block mb-4">15-25 sq ft</div>
+          <h3 class="font-semibold mb-2">Locker / Small</h3>
+          <p class="text-gray-600 text-sm mb-3">Like a large wardrobe</p>
+          <ul class="text-xs text-gray-500 space-y-1">
+            <li>• Documents and files</li>
+            <li>• Small furniture items</li>
+            <li>• Sports equipment</li>
+            <li>• Seasonal clothing</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="bg-blue-100 text-primary font-bold text-lg px-3 py-1 rounded inline-block mb-4">35-50 sq ft</div>
+          <h3 class="font-semibold mb-2">Garden Shed Size</h3>
+          <p class="text-gray-600 text-sm mb-3">Contents of a small flat</p>
+          <ul class="text-xs text-gray-500 space-y-1">
+            <li>• Studio flat contents</li>
+            <li>• Garden furniture</li>
+            <li>• Bikes and equipment</li>
+            <li>• Small office items</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="bg-blue-100 text-primary font-bold text-lg px-3 py-1 rounded inline-block mb-4">75-100 sq ft</div>
+          <h3 class="font-semibold mb-2">Single Garage Size</h3>
+          <p class="text-gray-600 text-sm mb-3">Contents of 1-2 bed flat</p>
+          <ul class="text-xs text-gray-500 space-y-1">
+            <li>• Flat contents</li>
+            <li>• Sofa and furniture</li>
+            <li>• Multiple appliances</li>
+            <li>• Business stock</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="bg-blue-100 text-primary font-bold text-lg px-3 py-1 rounded inline-block mb-4">150+ sq ft</div>
+          <h3 class="font-semibold mb-2">Double Garage+</h3>
+          <p class="text-gray-600 text-sm mb-3">Contents of 3+ bed house</p>
+          <ul class="text-xs text-gray-500 space-y-1">
+            <li>• Full house contents</li>
+            <li>• Vehicles/boats</li>
+            <li>• Large business stock</li>
+            <li>• Workshop space</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Choosing the Right Unit Size</h2>
-        <p>
-          Selecting the right unit prevents paying for space you don't need while ensuring everything fits. A small locker suits documents and small items. A unit equivalent to a garden shed stores furniture from a small flat. Larger units accommodate entire house contents. Storage consultants can help estimate your requirements based on an inventory of what you're storing.
+  <!-- Flexible Terms -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Flexible Storage Terms</h2>
+      <div class="prose prose-lg max-w-none text-gray-600">
+        <p class="mb-6">
+          Self storage adapts to your timeline. Most facilities offer contracts from as little as one week, with the flexibility to extend as needed. There are typically no long-term commitments required, and you can often upgrade or downgrade your unit size as your storage needs change.
         </p>
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <div class="bg-gray-50 p-6 rounded-lg text-center">
+            <div class="text-2xl font-bold text-primary mb-2">1 Week+</div>
+            <p class="text-sm text-gray-600">Minimum rental periods</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg text-center">
+            <div class="text-2xl font-bold text-primary mb-2">No Deposit</div>
+            <p class="text-sm text-gray-600">At many facilities</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg text-center">
+            <div class="text-2xl font-bold text-primary mb-2">24/7 Access</div>
+            <p class="text-sm text-gray-600">Available at select sites</p>
+          </div>
+        </div>
+        <p class="mt-8">
+          Access hours vary by facility — many offer extended hours or even 24/7 access for customers who need to retrieve items outside normal business hours. When comparing options, check whether access times suit your schedule.
+        </p>
+      </div>
+    </div>
+  </section>
 
-        <div class="bg-blue-50 border-l-4 border-primary p-6 mt-8 rounded-r-lg">
-          <p class="font-semibold text-primary mb-2">Looking for storage in Bristol?</p>
-          <p class="text-gray-700">
-            Contact
-            <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">
-              Painless Removals
-            </a>
-            to discuss your storage requirements and find the right solution.
-          </p>
+  <!-- What to Store -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">What Can You Store?</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-xl">
+          <h3 class="text-lg font-semibold text-green-600 mb-4">✓ Commonly Stored Items</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Furniture (sofas, beds, tables, chairs)</li>
+            <li>• Household appliances</li>
+            <li>• Clothing and personal effects</li>
+            <li>• Books, DVDs, vinyl records</li>
+            <li>• Sports and hobby equipment</li>
+            <li>• Garden furniture and tools</li>
+            <li>• Business stock and inventory</li>
+            <li>• Office furniture and equipment</li>
+            <li>• Archived documents</li>
+            <li>• Seasonal decorations</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-xl">
+          <h3 class="text-lg font-semibold text-red-600 mb-4">✗ Not Permitted</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Perishable food items</li>
+            <li>• Hazardous materials</li>
+            <li>• Flammable substances</li>
+            <li>• Illegal items</li>
+            <li>• Living things (plants, animals)</li>
+            <li>• Firearms and ammunition</li>
+            <li>• Chemicals and solvents</li>
+            <li>• Unregistered vehicles</li>
+          </ul>
+          <p class="text-sm text-gray-500 mt-4">Check with your storage provider for full terms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Storage Tips -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Storage Tips</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">1</div>
+          <div>
+            <h3 class="font-semibold mb-2">Use uniform boxes</h3>
+            <p class="text-gray-600 text-sm">Same-sized boxes stack better and make efficient use of space.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">2</div>
+          <div>
+            <h3 class="font-semibold mb-2">Label everything</h3>
+            <p class="text-gray-600 text-sm">Clear labels on all sides help you find items without unstacking.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">3</div>
+          <div>
+            <h3 class="font-semibold mb-2">Create an aisle</h3>
+            <p class="text-gray-600 text-sm">Leave space to walk into the unit for easier access to items at the back.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">4</div>
+          <div>
+            <h3 class="font-semibold mb-2">Protect soft furnishings</h3>
+            <p class="text-gray-600 text-sm">Cover sofas and mattresses with dust sheets or storage bags.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">5</div>
+          <div>
+            <h3 class="font-semibold mb-2">Disassemble furniture</h3>
+            <p class="text-gray-600 text-sm">Take apart beds and tables to save space and prevent damage.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">6</div>
+          <div>
+            <h3 class="font-semibold mb-2">Keep inventory</h3>
+            <p class="text-gray-600 text-sm">Maintain a list of what's stored — useful for insurance and retrieval.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-blue-50 border-l-4 border-primary p-8 rounded-r-lg">
+        <h2 class="text-2xl font-bold text-primary mb-4">Looking for Storage in Bristol?</h2>
+        <p class="text-gray-700 mb-6">
+          <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">Painless Removals</a> can help you find the right storage solution for your needs. Whether you need short-term storage during a move or long-term space for business inventory, they'll match you with secure, affordable options.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="tel:01172870082" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+            Call 01172 870 082
+          </a>
+          <a href="#callback-form" class="inline-flex items-center justify-center px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-red-700 transition-colors">
+            Request Callback
+          </a>
         </div>
       </div>
     </div>

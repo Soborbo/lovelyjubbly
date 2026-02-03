@@ -7,58 +7,113 @@ import CallbackForm from '../components/CallbackForm.astro';
 const services = [
   {
     title: 'House Removals',
-    description: 'Professional home moving services across Bristol and beyond.',
+    description: 'Professional home moving services across Bristol and beyond. Full or partial moves handled with care.',
     href: '/house-removals-bristol/',
     icon: '🏠',
   },
   {
     title: 'Man and Van',
-    description: 'Flexible, affordable moving help for smaller jobs.',
+    description: 'Flexible, affordable moving help for smaller jobs, single items, or student relocations.',
     href: '/man-and-van/',
     icon: '🚐',
   },
   {
     title: 'Packing Service',
-    description: 'Expert packing to keep your belongings safe.',
+    description: 'Expert packing to keep your belongings safe. Quality materials and careful handling included.',
     href: '/packing-service/',
     icon: '📦',
   },
   {
     title: 'Self Storage',
-    description: 'Secure storage solutions for any duration.',
+    description: 'Secure storage solutions for any duration. Flexible terms for domestic and business needs.',
     href: '/self-storage-bristol/',
     icon: '🔐',
   },
   {
     title: 'Piano Removals',
-    description: 'Specialist piano moving with care and expertise.',
+    description: 'Specialist piano moving with care and expertise. Uprights, grands, and digital pianos.',
     href: '/piano-removals/',
     icon: '🎹',
   },
   {
     title: 'European Removals',
-    description: 'International moves handled professionally.',
+    description: 'International moves handled professionally. Door-to-door service across Europe.',
     href: '/european-removals-and-storage/',
     icon: '🌍',
   },
 ];
+
+const faqs = [
+  {
+    question: "What happened to Lovely Jubbly Removals?",
+    answer: "Lovely Jubbly Removals ceased trading in 2023 after many successful years serving the Bristol area. The company was known for its award-winning service and commitment to customer satisfaction."
+  },
+  {
+    question: "Who can I contact for removal services in Bristol now?",
+    answer: "Painless Removals has taken over serving the Bristol removal market. They offer the same range of services including house removals, man and van, storage, and international moves. Call 01172 870 082 for a free quote."
+  },
+  {
+    question: "Are the old Lovely Jubbly Removals phone numbers still working?",
+    answer: "No, the previous Lovely Jubbly contact numbers (01179 902468) are no longer in service. Please contact Painless Removals on 01172 870 082 for all removal enquiries."
+  },
+  {
+    question: "Does Painless Removals cover the same areas as Lovely Jubbly did?",
+    answer: "Yes, Painless Removals serves Bristol and all surrounding areas including Bath, Clevedon, Portishead, Yate, Thornbury, and beyond. They also handle long-distance and European relocations."
+  },
+  {
+    question: "Can I get a free removal quote?",
+    answer: "Absolutely. Painless Removals offers free, no-obligation quotes for all removal services. You can call them directly, fill out the callback form on this website, or email hello@painlessremovals.com."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 ---
 <BaseLayout
-  title="Looking for Bristol Removals? | Lovely Jubbly Removals"
-  description="Lovely Jubbly Removals has closed. For professional removal services in Bristol, contact Painless Removals. House moves, man and van, storage, and more."
+  title="Bristol Removals | House Moves, Man & Van, Storage | Lovely Jubbly Removals"
+  description="Looking for removal services in Bristol? Lovely Jubbly Removals has closed but Painless Removals continues the tradition. House removals, man and van, packing, storage, piano moves & European relocations. Call 01172 870 082."
+  schema={faqSchema}
 >
   <Hero
     title="Looking for Bristol Removals?"
-    subtitle="Lovely Jubbly Removals has closed, but Painless Removals is here to help."
+    subtitle="Lovely Jubbly Removals has closed, but Painless Removals is here to help with all your moving needs."
     showCtas={true}
   />
 
+  <!-- Introduction Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-6">Professional Removal Services in Bristol</h2>
+      <div class="prose prose-lg max-w-none text-gray-600">
+        <p class="text-xl leading-relaxed mb-6">
+          For years, Lovely Jubbly Removals was one of Bristol's most trusted moving companies. Known for reliability, competitive pricing, and genuine care for customers' belongings, the company built a reputation that earned UK Enterprise Awards in both 2020 and 2021.
+        </p>
+        <p class="leading-relaxed mb-6">
+          Although Lovely Jubbly Removals ceased trading in 2023, the need for quality removal services in Bristol remains. That's why we're connecting former customers and new clients with <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">Painless Removals</a> — a professional moving company continuing the tradition of excellent service in the Bristol area.
+        </p>
+        <p class="leading-relaxed">
+          Whether you're moving house across Bristol, need a man and van for a few items, require secure storage, or planning an international relocation to Europe, Painless Removals offers comprehensive solutions tailored to your needs and budget.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Services Grid -->
-  <section class="py-16">
+  <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-4">Our Services</h2>
+      <h2 class="text-3xl font-bold text-center mb-4">Removal Services Available</h2>
       <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-        While Lovely Jubbly Removals is no longer operating, Painless Removals offers all these services and more.
+        From single-item moves to complete house relocations, find the right service for your needs. All services now provided by Painless Removals.
       </p>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service) => (
@@ -68,29 +123,129 @@ const services = [
     </div>
   </section>
 
+  <!-- Why Choose Professional Movers -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Use Professional Removal Services?</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">⏱️</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Save Time and Stress</h3>
+          <p class="text-gray-600">
+            Moving is consistently rated as one of life's most stressful events. Professional movers handle the heavy lifting, logistics, and transport so you can focus on settling into your new home.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🛡️</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Protected Belongings</h3>
+          <p class="text-gray-600">
+            Professional removal companies carry goods-in-transit insurance, protecting your possessions throughout the move. Trained staff know how to handle fragile and valuable items safely.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">💪</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Equipment and Expertise</h3>
+          <p class="text-gray-600">
+            From furniture blankets and straps to specialist trolleys and lifting equipment, professional movers come prepared. No need to hire a van or rope in reluctant friends.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas Covered -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-6">Areas We Cover</h2>
+      <p class="text-gray-600 text-center mb-8 max-w-2xl mx-auto">
+        Removal services available throughout Bristol and the surrounding region, plus long-distance moves anywhere in the UK and Europe.
+      </p>
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        {[
+          'Bristol City Centre', 'Clifton', 'Redland', 'Bishopston',
+          'Horfield', 'Southville', 'Bedminster', 'Knowle',
+          'Fishponds', 'Eastville', 'Bradley Stoke', 'Filton',
+          'Kingswood', 'Downend', 'Portishead', 'Clevedon',
+          'Yate', 'Thornbury', 'Bath', 'Weston-super-Mare'
+        ].map((area) => (
+          <div class="bg-white px-4 py-3 rounded-lg text-center text-gray-700 shadow-sm">
+            {area}
+          </div>
+        ))}
+      </div>
+      <p class="text-center mt-8 text-gray-600">
+        Plus nationwide and <a href="/european-removals-and-storage/" class="text-primary hover:underline">European removals</a> available.
+      </p>
+    </div>
+  </section>
+
   <!-- Trust Signals -->
-  <section class="py-16 bg-gray-100">
+  <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-8">Award-Winning Heritage</h2>
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="bg-white rounded-xl p-8 shadow-md">
+        <div class="bg-gray-50 rounded-xl p-8 shadow-md">
           <div class="text-5xl mb-4">🏆</div>
           <h3 class="text-xl font-semibold mb-2">UK Enterprise Award Winner</h3>
           <p class="text-gray-600">
-            Lovely Jubbly Removals was recognised with UK Enterprise Awards in 2020 and 2021 for outstanding service in the Bristol removal industry.
+            Lovely Jubbly Removals was recognised with UK Enterprise Awards in 2020 and 2021 for outstanding service in the Bristol removal industry. This legacy of excellence continues through our recommended partner.
           </p>
         </div>
-        <div class="bg-white rounded-xl p-8 shadow-md">
+        <div class="bg-gray-50 rounded-xl p-8 shadow-md">
           <div class="text-5xl mb-4">🤝</div>
-          <h3 class="text-xl font-semibold mb-2">Now Served by Painless Removals</h3>
+          <h3 class="text-xl font-semibold mb-2">Trusted Local Service</h3>
           <p class="text-gray-600">
-            The same commitment to quality continues with
             <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline">
               Painless Removals
             </a>
-            — trusted Bristol movers ready to help.
+            continues the tradition of reliable, professional moving services in Bristol. Fully insured, competitively priced, and committed to customer satisfaction.
           </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
+            <p class="text-gray-600">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-primary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to Get Moving?</h2>
+      <p class="text-xl mb-8 text-blue-100">
+        Get a free, no-obligation quote for your removal. Whether it's a local move or international relocation, we can help.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="tel:01172870082"
+          class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+        >
+          <span class="mr-2">📞</span> Call 01172 870 082
+        </a>
+        <a
+          href="#callback-form"
+          class="inline-flex items-center justify-center px-8 py-4 bg-secondary text-white font-semibold rounded-lg hover:bg-red-700 transition-colors"
+        >
+          Request Callback
+        </a>
       </div>
     </div>
   </section>

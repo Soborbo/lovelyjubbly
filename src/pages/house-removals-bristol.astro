@@ -2,54 +2,260 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import CallbackForm from '../components/CallbackForm.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "House Removals Bristol",
+  "description": "Professional house removal services in Bristol. Full home moving including packing, transport, and furniture assembly.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Painless Removals",
+    "telephone": "01172 870 082",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "290-294 Southmead Rd",
+      "addressLocality": "Bristol",
+      "postalCode": "BS10 5EN",
+      "addressCountry": "GB"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Bristol"
+  },
+  "serviceType": "House Removal"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://lovelyjubblyremovals.co.uk/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "House Removals Bristol",
+      "item": "https://lovelyjubblyremovals.co.uk/house-removals-bristol/"
+    }
+  ]
+};
 ---
 <BaseLayout
-  title="House Removals Bristol | Lovely Jubbly Removals"
-  description="Professional house removal services in Bristol. Full home moving, packing, and transport. Get a free quote from Painless Removals today."
+  title="House Removals Bristol | Professional Home Moving Services | Lovely Jubbly Removals"
+  description="Professional house removal services in Bristol. Experienced movers, full insurance, competitive prices. Local moves, long-distance relocations, packing services. Free quotes from Painless Removals. Call 01172 870 082."
   canonical="/house-removals-bristol/"
+  schema={[serviceSchema, breadcrumbSchema]}
 >
   <Hero
     title="House Removals Bristol"
-    subtitle="Professional, reliable home moving services"
+    subtitle="Professional, reliable home moving services for stress-free relocations"
     showCtas={true}
   />
 
-  <section class="py-16">
+  <!-- Introduction -->
+  <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
       <div class="prose prose-lg max-w-none">
         <p class="text-xl text-gray-600 mb-8">
-          Moving house is one of life's biggest undertakings. Having the right removal team makes all the difference between a stressful experience and a smooth transition to your new home.
+          Moving house is one of life's biggest undertakings. Having the right removal team makes all the difference between a stressful experience and a smooth transition to your new home. In Bristol, professional house removal services have helped thousands of families relocate safely and efficiently.
         </p>
+      </div>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mb-4">What's Included in a House Removal</h2>
-        <p>
-          A professional house removal service covers every aspect of moving your belongings safely. This includes careful loading and unloading of furniture, secure transport in well-maintained vehicles, and placement of items in your new home exactly where you want them. Many services also offer furniture disassembly and reassembly for larger pieces that won't fit through doorways.
-        </p>
+  <!-- What's Included -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">What's Included in a House Removal</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="text-3xl mb-4">📋</div>
+          <h3 class="text-xl font-semibold mb-3">Pre-Move Survey</h3>
+          <p class="text-gray-600">A thorough assessment of your belongings to provide an accurate quote and plan the logistics of your move.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="text-3xl mb-4">📦</div>
+          <h3 class="text-xl font-semibold mb-3">Careful Loading</h3>
+          <p class="text-gray-600">Trained staff carefully load your items using proper lifting techniques, blankets, and strapping to prevent damage.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="text-3xl mb-4">🚛</div>
+          <h3 class="text-xl font-semibold mb-3">Secure Transport</h3>
+          <p class="text-gray-600">Well-maintained vehicles with air-ride suspension and GPS tracking ensure safe, reliable transportation.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="text-3xl mb-4">🏠</div>
+          <h3 class="text-xl font-semibold mb-3">Unloading & Placement</h3>
+          <p class="text-gray-600">Items placed exactly where you want them in your new home, with furniture reassembled if required.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="text-3xl mb-4">🔧</div>
+          <h3 class="text-xl font-semibold mb-3">Furniture Assembly</h3>
+          <p class="text-gray-600">Beds, wardrobes, and other furniture carefully disassembled and reassembled at your new property.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="text-3xl mb-4">🛡️</div>
+          <h3 class="text-xl font-semibold mb-3">Full Insurance</h3>
+          <p class="text-gray-600">Comprehensive goods-in-transit insurance protects your belongings throughout the entire move.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Why Use Professional Movers</h2>
-        <p>
+  <!-- Why Professional Movers -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Why Use Professional House Movers?</h2>
+      <div class="prose prose-lg max-w-none text-gray-600">
+        <p class="mb-6">
           Professional movers bring expertise that comes from handling hundreds of moves. They know how to protect fragile items, navigate tight staircases, and efficiently pack a vehicle to maximise space while preventing damage. Insurance coverage provides peace of mind, and the time saved compared to DIY moving is substantial — most people underestimate how long moving actually takes.
         </p>
-
-        <h2 class="text-2xl font-bold mt-8 mb-4">Service Area</h2>
-        <p>
-          House removal services cover Bristol city centre and all surrounding areas including Clifton, Redland, Cotham, Bishopston, Southville, Bedminster, and beyond. Whether you're moving within Bristol or relocating to or from the city, professional help is available for local moves, long-distance relocations, and everything in between.
+        <p class="mb-6">
+          Consider the risks of self-moving: potential injury from heavy lifting, damage to furniture and walls, vehicle hire complications, and the sheer exhaustion of doing everything yourself. Professional movers eliminate these concerns with trained teams, proper equipment, and systematic processes refined over years of experience.
         </p>
-
-        <h2 class="text-2xl font-bold mt-8 mb-4">Transparent Pricing</h2>
         <p>
-          Reputable removal companies provide clear, upfront quotes with no hidden fees. The cost depends on factors like the size of your home, distance of the move, access requirements, and whether you need additional services like packing. Request a free survey or video call assessment to get an accurate quote for your specific situation.
+          The cost of professional house removals in Bristol is often less than people expect, especially when factoring in van hire, fuel, packing materials, and the value of your time. Most removal companies offer free surveys and quotes, allowing you to compare options before committing.
         </p>
+      </div>
+    </div>
+  </section>
 
-        <div class="bg-blue-50 border-l-4 border-primary p-6 mt-8 rounded-r-lg">
-          <p class="font-semibold text-primary mb-2">Need a house removal quote?</p>
-          <p class="text-gray-700">
-            Contact
-            <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">
-              Painless Removals
-            </a>
-            for a free, no-obligation quote on your Bristol house move.
-          </p>
+  <!-- House Sizes -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Removals for Every Home Size</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+          <div class="text-4xl mb-4">🏢</div>
+          <h3 class="text-lg font-semibold mb-2">Studio & 1 Bed Flats</h3>
+          <p class="text-gray-600 text-sm">Typically 1 van, 2 movers, half day</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+          <div class="text-4xl mb-4">🏠</div>
+          <h3 class="text-lg font-semibold mb-2">2-3 Bed Houses</h3>
+          <p class="text-gray-600 text-sm">Typically 1-2 vans, 2-3 movers, full day</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+          <div class="text-4xl mb-4">🏡</div>
+          <h3 class="text-lg font-semibold mb-2">4-5 Bed Houses</h3>
+          <p class="text-gray-600 text-sm">Typically 2 vans, 3-4 movers, full day</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+          <div class="text-4xl mb-4">🏰</div>
+          <h3 class="text-lg font-semibold mb-2">Large Properties</h3>
+          <p class="text-gray-600 text-sm">Multiple vehicles, extended teams, multi-day</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Area -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Bristol House Removal Service Area</h2>
+      <div class="prose prose-lg max-w-none text-gray-600">
+        <p class="mb-6">
+          House removal services cover Bristol city centre and all surrounding areas including Clifton, Redland, Cotham, Bishopston, Southville, Bedminster, Knowle, Fishponds, Horfield, Henleaze, Westbury-on-Trym, Stoke Bishop, and beyond.
+        </p>
+        <p class="mb-6">
+          Whether you're moving within Bristol — perhaps from a Clifton flat to a family home in Bradley Stoke — or relocating to or from the city entirely, professional help is available for local moves, long-distance relocations across the UK, and even <a href="/european-removals-and-storage/" class="text-primary hover:underline">international moves to Europe</a>.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-8">
+        {['Clifton', 'Redland', 'Cotham', 'Bishopston', 'Southville', 'Bedminster', 'Knowle', 'Fishponds', 'Horfield', 'Henleaze', 'Bradley Stoke', 'Filton', 'Kingswood', 'Downend', 'Portishead', 'Clevedon'].map((area) => (
+          <div class="bg-gray-100 px-3 py-2 rounded text-center text-sm text-gray-700">{area}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Transparent House Removal Pricing</h2>
+      <div class="prose prose-lg max-w-none text-gray-600">
+        <p class="mb-6">
+          Reputable removal companies provide clear, upfront quotes with no hidden fees. The cost of your house removal depends on several factors:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mb-6">
+          <li><strong>Property size:</strong> Number of bedrooms and overall volume of belongings</li>
+          <li><strong>Distance:</strong> Local moves cost less than long-distance relocations</li>
+          <li><strong>Access:</strong> Stairs, narrow doorways, parking restrictions, or lifts affect timing</li>
+          <li><strong>Additional services:</strong> Packing, storage, or specialist item handling</li>
+          <li><strong>Timing:</strong> Weekend and end-of-month moves may have premium rates</li>
+        </ul>
+        <p>
+          Request a free survey or video call assessment to get an accurate quote for your specific situation. This ensures no surprises on moving day and allows you to budget appropriately.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Moving Tips -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">House Moving Tips</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">1</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Book Early</h3>
+            <p class="text-gray-600">Good removal companies get booked up, especially at month-ends and during summer. Aim to book 4-6 weeks ahead.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">2</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Declutter First</h3>
+            <p class="text-gray-600">Moving is the perfect time to sort through belongings. Less to move means lower costs and a fresh start.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">3</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Label Everything</h3>
+            <p class="text-gray-600">Clear labelling with room destinations makes unpacking far easier. Consider colour-coded labels for quick identification.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">4</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Pack an Essentials Box</h3>
+            <p class="text-gray-600">Keep toiletries, phone chargers, kettle, and first-night essentials separate and easily accessible.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">5</div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Confirm Parking</h3>
+            <p class="text-gray-600">Ensure there's space for the removal van at both properties. Arrange permits if needed for restricted areas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Box -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-blue-50 border-l-4 border-primary p-8 rounded-r-lg">
+        <h2 class="text-2xl font-bold text-primary mb-4">Need a House Removal Quote in Bristol?</h2>
+        <p class="text-gray-700 mb-6">
+          <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">Painless Removals</a> provides professional house removal services throughout Bristol and the surrounding areas. With experienced teams, modern vehicles, and comprehensive insurance, they ensure your move goes smoothly.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="tel:01172870082" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+            Call 01172 870 082
+          </a>
+          <a href="#callback-form" class="inline-flex items-center justify-center px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-red-700 transition-colors">
+            Request Callback
+          </a>
         </div>
       </div>
     </div>

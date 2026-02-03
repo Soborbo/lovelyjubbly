@@ -8,11 +8,58 @@ interface Props {
   title: string;
   description: string;
   canonical?: string;
+  schema?: object | object[];
 }
 
-const { title, description, canonical } = Astro.props;
+const { title, description, canonical, schema } = Astro.props;
 const siteUrl = 'https://lovelyjubblyremovals.co.uk';
 const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.url.pathname}`;
+
+// Base organization schema
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Painless Removals",
+  "description": "Professional removal services in Bristol. Formerly served by Lovely Jubbly Removals.",
+  "url": "https://painlessremovals.co.uk",
+  "telephone": "01172 870 082",
+  "email": "hello@painlessremovals.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "290-294 Southmead Rd",
+    "addressLocality": "Bristol",
+    "postalCode": "BS10 5EN",
+    "addressCountry": "GB"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "51.4975",
+    "longitude": "-2.6070"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Bristol"
+  },
+  "priceRange": "££"
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Lovely Jubbly Removals",
+  "url": siteUrl,
+  "description": "Lovely Jubbly Removals has closed. For Bristol removal services, contact Painless Removals."
+};
+
+const allSchemas = schema
+  ? [organizationSchema, websiteSchema, ...(Array.isArray(schema) ? schema : [schema])]
+  : [organizationSchema, websiteSchema];
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -29,16 +76,28 @@ const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.u
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Lovely Jubbly Removals" />
+    <meta property="og:locale" content="en_GB" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
+    <!-- Geo tags for local SEO -->
+    <meta name="geo.region" content="GB-BST" />
+    <meta name="geo.placename" content="Bristol" />
+    <meta name="geo.position" content="51.4545;-2.5879" />
+    <meta name="ICBM" content="51.4545, -2.5879" />
+
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- JSON-LD Structured Data -->
+    {allSchemas.map((s) => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
 
     <title>{title}</title>
   </head>

@@ -2,53 +2,321 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import CallbackForm from '../components/CallbackForm.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Piano Removals Bristol",
+  "description": "Specialist piano removal services in Bristol. Safe transport of upright pianos, grand pianos, and digital pianos. Fully insured with experienced handlers.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Painless Removals",
+    "telephone": "01172 870 082"
+  },
+  "areaServed": { "@type": "City", "name": "Bristol" },
+  "serviceType": "Piano Removal"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lovelyjubblyremovals.co.uk/" },
+    { "@type": "ListItem", "position": 2, "name": "Piano Removals", "item": "https://lovelyjubblyremovals.co.uk/piano-removals/" }
+  ]
+};
 ---
 <BaseLayout
-  title="Piano Removals Bristol | Lovely Jubbly Removals"
-  description="Specialist piano removal services in Bristol. Upright and grand pianos moved safely by experienced professionals. Fully insured."
+  title="Piano Removals Bristol | Specialist Piano Movers | Lovely Jubbly Removals"
+  description="Specialist piano removal services in Bristol. Upright and grand pianos moved safely by experienced professionals. Specialist equipment, full insurance, competitive prices. Call 01172 870 082 for a quote."
   canonical="/piano-removals/"
+  schema={[serviceSchema, breadcrumbSchema]}
 >
   <Hero
     title="Piano Removals Bristol"
-    subtitle="Specialist piano moving with care"
+    subtitle="Specialist piano moving with care and expertise"
     showCtas={true}
   />
 
-  <section class="py-16">
+  <!-- Introduction -->
+  <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="prose prose-lg max-w-none">
-        <p class="text-xl text-gray-600 mb-8">
-          Pianos are among the most challenging items to move. Their weight, size, value, and delicate internal mechanisms demand specialist handling that goes beyond standard removal services.
-        </p>
+      <p class="text-xl text-gray-600 mb-8">
+        Pianos are among the most challenging items to move. Their weight, size, value, and delicate internal mechanisms demand specialist handling that goes beyond standard removal services. Whether you have a cherished family upright or a concert grand, professional piano movers ensure your instrument arrives safely at its new home.
+      </p>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mb-4">Why Pianos Need Specialist Movers</h2>
-        <p>
-          A typical upright piano weighs between 200-400kg, while grand pianos can exceed 500kg. Beyond the weight, pianos contain thousands of precisely calibrated parts — hammers, strings, and soundboards that can be damaged by improper handling. A piano moved incorrectly might look fine but play poorly. Regular removal teams aren't equipped or trained for these unique challenges.
+  <!-- Why Specialist Movers -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Pianos Need Specialist Movers</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+          <div class="text-4xl mb-4">⚖️</div>
+          <h3 class="text-xl font-semibold mb-4">Extreme Weight</h3>
+          <p class="text-gray-600 mb-4">Pianos are deceptively heavy. Even a small upright can weigh over 200kg.</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Upright piano: 200-400kg</li>
+            <li>• Baby grand: 250-350kg</li>
+            <li>• Grand piano: 350-550kg</li>
+            <li>• Concert grand: 450-600kg+</li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+          <div class="text-4xl mb-4">🎵</div>
+          <h3 class="text-xl font-semibold mb-4">Delicate Mechanisms</h3>
+          <p class="text-gray-600 mb-4">Inside every piano are thousands of precisely calibrated parts.</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Hammers and dampers</li>
+            <li>• Strings under tension</li>
+            <li>• Soundboard vibrations</li>
+            <li>• Pedal mechanisms</li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+          <div class="text-4xl mb-4">💰</div>
+          <h3 class="text-xl font-semibold mb-4">Significant Value</h3>
+          <p class="text-gray-600 mb-4">Pianos represent substantial investments, both financial and emotional.</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Quality uprights: £2,000-10,000</li>
+            <li>• Grand pianos: £10,000-100,000+</li>
+            <li>• Antique pianos: Priceless</li>
+            <li>• Family heirlooms: Irreplaceable</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 p-6 bg-yellow-50 border-l-4 border-yellow-500 rounded-r-lg max-w-3xl mx-auto">
+        <p class="text-gray-700">
+          <strong>Warning:</strong> A piano moved incorrectly might look fine but play poorly. Internal damage from improper handling often doesn't reveal itself until a tuner examines the instrument. Regular removal teams simply aren't equipped or trained for these unique challenges.
         </p>
+      </div>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Equipment and Expertise</h2>
-        <p>
-          Piano movers use specialised equipment designed for the task. Heavy-duty piano skids, stair climbers, and custom strapping systems allow safe navigation through doorways, around corners, and up or down stairs. Teams know how to distribute weight correctly, protect finished surfaces, and handle the instrument at the right points to avoid structural stress.
-        </p>
+  <!-- Equipment & Expertise -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Specialist Equipment & Expertise</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🛷</span>
+          </div>
+          <h3 class="font-semibold mb-2">Piano Skids</h3>
+          <p class="text-gray-600 text-sm">Heavy-duty wheeled platforms designed specifically for piano transport</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">⬆️</span>
+          </div>
+          <h3 class="font-semibold mb-2">Stair Climbers</h3>
+          <p class="text-gray-600 text-sm">Motorised equipment for safely navigating stairs with heavy loads</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🧵</span>
+          </div>
+          <h3 class="font-semibold mb-2">Specialist Straps</h3>
+          <p class="text-gray-600 text-sm">Custom strapping systems that secure without damaging the instrument</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🛡️</span>
+          </div>
+          <h3 class="font-semibold mb-2">Protective Covers</h3>
+          <p class="text-gray-600 text-sm">Quilted blankets and covers to protect polished surfaces</p>
+        </div>
+      </div>
+      <div class="mt-12 max-w-3xl mx-auto">
+        <h3 class="text-xl font-semibold mb-4 text-center">Our Team Knows:</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> How to distribute weight correctly</li>
+            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Where to lift without causing stress</li>
+            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Safe angles for tilting and turning</li>
+          </ul>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> How to navigate tight spaces</li>
+            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Proper securing for transport</li>
+            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Post-move positioning and care</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Insurance Coverage</h2>
-        <p>
-          Given the value of most pianos — from a few thousand pounds for quality uprights to tens of thousands for grand pianos — proper insurance is essential. Specialist piano movers carry specific coverage for instrument damage, far exceeding standard goods-in-transit policies. Before booking any service, verify their insurance covers the full replacement value of your piano.
-        </p>
-
-        <h2 class="text-2xl font-bold mt-8 mb-4">Upright and Grand Pianos</h2>
-        <p>
-          Different piano types require different approaches. Upright pianos are moved on their base using piano skids, keeping them vertical throughout. Grand pianos are more complex — the legs and pedal assembly are removed, the piano is carefully tilted onto a special board, wrapped, and transported on its side. Both require trained teams who perform these moves regularly.
-        </p>
-
-        <div class="bg-blue-50 border-l-4 border-primary p-6 mt-8 rounded-r-lg">
-          <p class="font-semibold text-primary mb-2">Moving a piano in Bristol?</p>
-          <p class="text-gray-700">
-            <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">
-              Painless Removals
-            </a>
-            has the expertise and equipment for safe piano transport. Get a specialist quote today.
+  <!-- Piano Types -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">We Move All Piano Types</h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+          <div class="text-5xl mb-4 text-center">🎹</div>
+          <h3 class="text-xl font-semibold mb-4 text-center">Upright Pianos</h3>
+          <p class="text-gray-600 mb-4">
+            Upright pianos are moved on their base using piano skids, keeping them vertical throughout the move. Despite being smaller than grands, they're often heavier relative to size and have their weight concentrated higher up.
           </p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li>✓ Console and spinet pianos</li>
+            <li>✓ Studio uprights</li>
+            <li>✓ Full-size uprights</li>
+            <li>✓ Overstrung uprights</li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+          <div class="text-5xl mb-4 text-center">🎼</div>
+          <h3 class="text-xl font-semibold mb-4 text-center">Grand Pianos</h3>
+          <p class="text-gray-600 mb-4">
+            Grand pianos require more complex handling. The legs and pedal assembly are removed, the piano is carefully tilted onto a special board, wrapped, and transported on its side. Reassembly at the destination requires precision.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li>✓ Baby grands (up to 5')</li>
+            <li>✓ Medium grands (5'-6')</li>
+            <li>✓ Semi-concert grands (6'-7')</li>
+            <li>✓ Concert grands (7'+)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 bg-white p-6 rounded-xl max-w-2xl mx-auto shadow-sm">
+        <h3 class="font-semibold mb-3 text-center">Also Handled:</h3>
+        <div class="flex flex-wrap justify-center gap-3 text-sm">
+          <span class="bg-gray-100 px-3 py-1 rounded">Digital Pianos</span>
+          <span class="bg-gray-100 px-3 py-1 rounded">Electric Organs</span>
+          <span class="bg-gray-100 px-3 py-1 rounded">Keyboards (88-key)</span>
+          <span class="bg-gray-100 px-3 py-1 rounded">Harpsichords</span>
+          <span class="bg-gray-100 px-3 py-1 rounded">Antique Pianos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insurance -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Insurance Coverage</h2>
+      <div class="prose prose-lg max-w-none text-gray-600">
+        <p class="mb-6">
+          Given the value of most pianos — from a few thousand pounds for quality uprights to tens of thousands for grand pianos — proper insurance is essential. Specialist piano movers carry specific coverage for instrument damage, far exceeding standard goods-in-transit policies.
+        </p>
+        <div class="bg-gray-50 p-6 rounded-xl mb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Before booking any piano move, verify:</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-1">✓</span>
+              <span>Insurance covers the full replacement value of your piano</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-1">✓</span>
+              <span>Coverage includes internal damage, not just visible marks</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-1">✓</span>
+              <span>Policy is current and certificate available on request</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-1">✓</span>
+              <span>Excess/deductible amounts are reasonable</span>
+            </li>
+          </ul>
+        </div>
+        <p>
+          If your piano is particularly valuable, consider additional coverage through your home insurance or a specialist musical instrument policy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Process -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">The Piano Moving Process</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">1</div>
+          <div class="bg-white p-6 rounded-xl flex-grow shadow-sm">
+            <h3 class="font-semibold text-lg mb-2">Assessment</h3>
+            <p class="text-gray-600">We'll need details about your piano (type, make, approximate age) and both locations (access, stairs, lifts, door widths, parking). Photos help us plan properly.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">2</div>
+          <div class="bg-white p-6 rounded-xl flex-grow shadow-sm">
+            <h3 class="font-semibold text-lg mb-2">Preparation</h3>
+            <p class="text-gray-600">On arrival, we protect the piano with quilted covers, secure the lid, and prepare any specialist equipment needed for the specific challenges of your move.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">3</div>
+          <div class="bg-white p-6 rounded-xl flex-grow shadow-sm">
+            <h3 class="font-semibold text-lg mb-2">Careful Transport</h3>
+            <p class="text-gray-600">Using appropriate equipment and techniques, we navigate the piano safely out of the property and into our vehicle. Secure strapping prevents movement during transit.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">4</div>
+          <div class="bg-white p-6 rounded-xl flex-grow shadow-sm">
+            <h3 class="font-semibold text-lg mb-2">Delivery & Positioning</h3>
+            <p class="text-gray-600">At the destination, we reverse the process — carefully navigating into position and removing protective covers. For grands, legs are reattached with precision.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">5</div>
+          <div class="bg-white p-6 rounded-xl flex-grow shadow-sm">
+            <h3 class="font-semibold text-lg mb-2">Post-Move Care</h3>
+            <p class="text-gray-600">We recommend waiting 2-4 weeks before tuning, allowing the piano to acclimatise to its new environment. Temperature and humidity changes affect tuning stability.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Factors -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Piano Moving Costs</h2>
+      <p class="text-gray-600 text-center mb-8 max-w-2xl mx-auto">
+        Piano moving costs depend on several factors. Here's what affects your quote:
+      </p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-semibold mb-3">Piano Type & Size</h3>
+          <p class="text-gray-600 text-sm">Grand pianos require more complex handling than uprights. Larger instruments need bigger teams.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-semibold mb-3">Access Challenges</h3>
+          <p class="text-gray-600 text-sm">Stairs, narrow doorways, lifts, and tight corners add complexity. Ground floor to ground floor is simplest.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-semibold mb-3">Distance</h3>
+          <p class="text-gray-600 text-sm">Local moves within Bristol cost less than long-distance relocations. We cover the whole UK.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-semibold mb-3">Special Requirements</h3>
+          <p class="text-gray-600 text-sm">Crane lifts for upper floors, temporary door removals, or very valuable instruments may add to costs.</p>
+        </div>
+      </div>
+      <p class="text-center mt-8 text-gray-600">
+        Get an accurate quote by providing details about your piano and both locations. We'll assess the job properly before giving you a fixed price.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-blue-50 border-l-4 border-primary p-8 rounded-r-lg">
+        <h2 class="text-2xl font-bold text-primary mb-4">Moving a Piano in Bristol?</h2>
+        <p class="text-gray-700 mb-6">
+          <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">Painless Removals</a> has the expertise and equipment for safe piano transport. Whether it's an upright moving across Bristol or a grand piano going cross-country, they'll handle your instrument with the care it deserves. Get a specialist quote today.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="tel:01172870082" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+            Call 01172 870 082
+          </a>
+          <a href="#callback-form" class="inline-flex items-center justify-center px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-red-700 transition-colors">
+            Request Callback
+          </a>
         </div>
       </div>
     </div>

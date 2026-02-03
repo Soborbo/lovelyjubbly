@@ -2,53 +2,328 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import CallbackForm from '../components/CallbackForm.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Packing Service Bristol",
+  "description": "Professional packing services in Bristol for house moves. Expert packing of fragile items, quality materials provided, unpacking service available.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Painless Removals",
+    "telephone": "01172 870 082"
+  },
+  "areaServed": { "@type": "City", "name": "Bristol" },
+  "serviceType": "Packing Service"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lovelyjubblyremovals.co.uk/" },
+    { "@type": "ListItem", "position": 2, "name": "Packing Service", "item": "https://lovelyjubblyremovals.co.uk/packing-service/" }
+  ]
+};
 ---
 <BaseLayout
-  title="Professional Packing Service Bristol | Lovely Jubbly Removals"
-  description="Expert packing services in Bristol. We pack your home safely with quality materials. Fragile items handled with care. Unpacking service available."
+  title="Professional Packing Service Bristol | Expert Home Packing | Lovely Jubbly Removals"
+  description="Professional packing services in Bristol for house moves. Expert handling of fragile items, quality materials included, unpacking service available. Let experienced packers prepare your home safely. Call 01172 870 082."
   canonical="/packing-service/"
+  schema={[serviceSchema, breadcrumbSchema]}
 >
   <Hero
     title="Professional Packing Service Bristol"
-    subtitle="Let the experts pack your home safely"
+    subtitle="Let the experts pack your home safely and efficiently"
     showCtas={true}
   />
 
-  <section class="py-16">
+  <!-- Introduction -->
+  <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="prose prose-lg max-w-none">
-        <p class="text-xl text-gray-600 mb-8">
-          Packing is often the most time-consuming part of moving. A professional packing service takes this burden off your shoulders, ensuring everything is wrapped, protected, and ready for transport.
-        </p>
+      <p class="text-xl text-gray-600 mb-8">
+        Packing is often the most time-consuming and stressful part of moving house. Most people underestimate how long it takes — and how much bubble wrap they need. A professional packing service takes this burden off your shoulders, ensuring everything is wrapped, protected, and ready for transport while you focus on other aspects of your move.
+      </p>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mb-4">Full Packing Service</h2>
-        <p>
-          A complete packing service handles everything in your home. A trained team arrives with all necessary materials and systematically works through each room, wrapping and boxing items with care. Every box is labelled clearly with contents and destination room. The process is methodical — most homes can be fully packed in a single day, depending on size.
-        </p>
+  <!-- Service Types -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Packing Service Options</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+          <div class="bg-primary text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4 font-bold">1</div>
+          <h3 class="text-xl font-semibold mb-4">Full Packing Service</h3>
+          <p class="text-gray-600 mb-4">We pack everything in your home from start to finish.</p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li>✓ Every room packed systematically</li>
+            <li>✓ All materials provided</li>
+            <li>✓ Boxes clearly labelled</li>
+            <li>✓ Usually completed in one day</li>
+            <li>✓ Best for busy professionals</li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+          <div class="bg-primary text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4 font-bold">2</div>
+          <h3 class="text-xl font-semibold mb-4">Partial Packing</h3>
+          <p class="text-gray-600 mb-4">We handle the difficult items while you pack the rest.</p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li>✓ Kitchen and fragile items</li>
+            <li>✓ Artwork and mirrors</li>
+            <li>✓ Electronics and appliances</li>
+            <li>✓ Specialist items</li>
+            <li>✓ Cost-effective option</li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+          <div class="bg-primary text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4 font-bold">3</div>
+          <h3 class="text-xl font-semibold mb-4">Unpacking Service</h3>
+          <p class="text-gray-600 mb-4">Arrive at your new home to find everything put away.</p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li>✓ Boxes unpacked and items placed</li>
+            <li>✓ Kitchen set up and usable</li>
+            <li>✓ Beds made and bedrooms ready</li>
+            <li>✓ All packing materials removed</li>
+            <li>✓ Move in, not unpack for weeks</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Fragile Items Handling</h2>
-        <p>
-          Delicate items require special attention and materials. China, glassware, mirrors, and artwork each have specific packing techniques. Professional packers use acid-free tissue paper, bubble wrap, picture boxes, and custom crating when needed. Years of experience mean they know exactly how to protect items that would be risky to pack yourself.
-        </p>
+  <!-- What We Pack -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Expert Handling for Every Item</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="text-4xl mb-4">🍽️</div>
+          <h3 class="font-semibold mb-2">Kitchen & Crockery</h3>
+          <p class="text-gray-600 text-sm">Each plate individually wrapped, glasses protected with cell dividers</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="text-4xl mb-4">🖼️</div>
+          <h3 class="font-semibold mb-2">Artwork & Mirrors</h3>
+          <p class="text-gray-600 text-sm">Picture boxes and corner protectors for safe transport</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="text-4xl mb-4">📺</div>
+          <h3 class="font-semibold mb-2">Electronics</h3>
+          <p class="text-gray-600 text-sm">TVs, computers, and appliances properly cushioned and boxed</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="text-4xl mb-4">👗</div>
+          <h3 class="font-semibold mb-2">Clothing & Textiles</h3>
+          <p class="text-gray-600 text-sm">Wardrobe boxes for hanging items, vacuum bags for bedding</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="text-4xl mb-4">📚</div>
+          <h3 class="font-semibold mb-2">Books & Media</h3>
+          <p class="text-gray-600 text-sm">Small, strong boxes to manage weight effectively</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="text-4xl mb-4">🎸</div>
+          <h3 class="font-semibold mb-2">Musical Instruments</h3>
+          <p class="text-gray-600 text-sm">Careful wrapping and specialist handling for delicate items</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="text-4xl mb-4">🏺</div>
+          <h3 class="font-semibold mb-2">Antiques & Valuables</h3>
+          <p class="text-gray-600 text-sm">Extra care and custom protection for irreplaceable items</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="text-4xl mb-4">🌱</div>
+          <h3 class="font-semibold mb-2">Plants</h3>
+          <p class="text-gray-600 text-sm">Careful handling to minimise stress during transport</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Packing Materials Included</h2>
-        <p>
-          Professional packing services supply all materials as part of the service. This includes sturdy removal boxes in various sizes, wardrobe boxes for hanging clothes, packing paper, bubble wrap, tape, and markers. You don't need to source or buy anything — it's all provided and included in the quote.
-        </p>
+  <!-- Materials Included -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Quality Packing Materials Included</h2>
+      <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+        Professional packing services supply all materials as part of the service — no need to source boxes or buy bubble wrap.
+      </p>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <h3 class="font-semibold mb-3">📦 Removal Boxes</h3>
+          <p class="text-gray-600 text-sm">Sturdy, double-walled boxes in various sizes. Small for heavy items, large for lighter bulky items.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <h3 class="font-semibold mb-3">👔 Wardrobe Boxes</h3>
+          <p class="text-gray-600 text-sm">Tall boxes with hanging rails so clothes transfer directly from wardrobe to box to wardrobe.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <h3 class="font-semibold mb-3">🖼️ Picture Boxes</h3>
+          <p class="text-gray-600 text-sm">Adjustable flat boxes designed specifically for artwork, mirrors, and framed photos.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <h3 class="font-semibold mb-3">🫧 Bubble Wrap</h3>
+          <p class="text-gray-600 text-sm">Cushioning for fragile items. Multiple layers for particularly delicate pieces.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <h3 class="font-semibold mb-3">📜 Packing Paper</h3>
+          <p class="text-gray-600 text-sm">Acid-free tissue and kraft paper for wrapping items without leaving ink marks.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <h3 class="font-semibold mb-3">📝 Labels & Tape</h3>
+          <p class="text-gray-600 text-sm">Strong packing tape and clear labelling so boxes go to the right rooms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Unpacking Service Available</h2>
-        <p>
-          The help doesn't have to stop when you arrive at your new home. Unpacking services get you settled faster. The team unpacks boxes, places items where you direct, and removes all packing materials for recycling. You go from a house full of boxes to a functioning home in hours rather than weeks of gradual unpacking.
-        </p>
+  <!-- Benefits -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Use Professional Packers?</h2>
+      <div class="space-y-8">
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 bg-green-100 text-green-600 w-12 h-12 rounded-full flex items-center justify-center">
+            <span class="text-xl">⏰</span>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Save Significant Time</h3>
+            <p class="text-gray-600">What takes most people weeks of evening and weekend work, professional packers complete in a day. A typical 3-bed house can be fully packed in 4-6 hours by an experienced team.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 bg-green-100 text-green-600 w-12 h-12 rounded-full flex items-center justify-center">
+            <span class="text-xl">🛡️</span>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Reduced Breakage Risk</h3>
+            <p class="text-gray-600">Professional packers know exactly how to protect each type of item. They've packed thousands of kitchens and understand that your grandmother's china needs more care than your everyday mugs.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 bg-green-100 text-green-600 w-12 h-12 rounded-full flex items-center justify-center">
+            <span class="text-xl">😌</span>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Reduced Stress</h3>
+            <p class="text-gray-600">Moving is stressful enough without spending weeks surrounded by boxes. Professional packing lets you maintain normal life right up until moving day.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 bg-green-100 text-green-600 w-12 h-12 rounded-full flex items-center justify-center">
+            <span class="text-xl">📋</span>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Insurance Coverage</h3>
+            <p class="text-gray-600">Items packed by professionals are typically covered under the removal company's insurance. Self-packed boxes may not have the same protection — worth considering for valuable items.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 bg-green-100 text-green-600 w-12 h-12 rounded-full flex items-center justify-center">
+            <span class="text-xl">📦</span>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Efficient Loading</h3>
+            <p class="text-gray-600">Professionally packed boxes are uniform, properly filled (not too heavy, no wasted space), and stack efficiently in the van. This can actually reduce overall moving time and cost.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="bg-blue-50 border-l-4 border-primary p-6 mt-8 rounded-r-lg">
-          <p class="font-semibold text-primary mb-2">Want professional packing for your move?</p>
-          <p class="text-gray-700">
-            <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">
-              Painless Removals
-            </a>
-            offers comprehensive packing services. Request a quote and make your move easier.
-          </p>
+  <!-- Process -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">How the Packing Process Works</h2>
+      <div class="space-y-8">
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">1</div>
+          <div class="bg-white p-6 rounded-xl flex-grow shadow-sm">
+            <h3 class="font-semibold text-lg mb-2">Assessment & Quote</h3>
+            <p class="text-gray-600">We assess your home (in person or via video call) to understand what needs packing and provide an accurate quote.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">2</div>
+          <div class="bg-white p-6 rounded-xl flex-grow shadow-sm">
+            <h3 class="font-semibold text-lg mb-2">Packing Day Arrival</h3>
+            <p class="text-gray-600">Our team arrives with all necessary materials. We typically pack the day before your move, so you have minimal disruption.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">3</div>
+          <div class="bg-white p-6 rounded-xl flex-grow shadow-sm">
+            <h3 class="font-semibold text-lg mb-2">Room-by-Room Packing</h3>
+            <p class="text-gray-600">We work systematically through your home, packing each room completely before moving to the next. Items are grouped logically.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">4</div>
+          <div class="bg-white p-6 rounded-xl flex-grow shadow-sm">
+            <h3 class="font-semibold text-lg mb-2">Clear Labelling</h3>
+            <p class="text-gray-600">Every box is labelled with contents and destination room. Fragile items are clearly marked. You get a copy of the inventory.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">5</div>
+          <div class="bg-white p-6 rounded-xl flex-grow shadow-sm">
+            <h3 class="font-semibold text-lg mb-2">Ready for Moving Day</h3>
+            <p class="text-gray-600">Your home is packed, organised, and ready for the removal team. Everything is prepared for efficient loading.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIY Packing Tips -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Packing Tips (If You're Doing It Yourself)</h2>
+      <p class="text-gray-600 text-center mb-8">Prefer to pack yourself? Here are professional tips to do it right:</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-semibold mb-3">Start Early</h3>
+          <p class="text-gray-600 text-sm">Begin with rarely-used items weeks before the move. Leave everyday essentials until last.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-semibold mb-3">Heavy Items, Small Boxes</h3>
+          <p class="text-gray-600 text-sm">Books and records go in small boxes. Light items like bedding can fill larger boxes.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-semibold mb-3">Fill Empty Spaces</h3>
+          <p class="text-gray-600 text-sm">Items shift and break when there's empty space. Use paper or bubble wrap to fill gaps.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-semibold mb-3">Wrap Plates Vertically</h3>
+          <p class="text-gray-600 text-sm">Plates packed on their edges (like records) are less likely to break than stacked flat.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-semibold mb-3">Photograph Electronics</h3>
+          <p class="text-gray-600 text-sm">Before unplugging, photograph cable setups so you can reconnect them correctly.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-semibold mb-3">Label All Sides</h3>
+          <p class="text-gray-600 text-sm">Label the top and at least one side of each box so you can identify them however they're stacked.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-blue-50 border-l-4 border-primary p-8 rounded-r-lg">
+        <h2 class="text-2xl font-bold text-primary mb-4">Want Professional Packing for Your Move?</h2>
+        <p class="text-gray-700 mb-6">
+          <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">Painless Removals</a> offers comprehensive packing services as part of their removal packages. From full house packing to fragile-only services, they'll handle your belongings with care. Request a quote and make your move easier.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="tel:01172870082" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+            Call 01172 870 082
+          </a>
+          <a href="#callback-form" class="inline-flex items-center justify-center px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-red-700 transition-colors">
+            Request Callback
+          </a>
         </div>
       </div>
     </div>

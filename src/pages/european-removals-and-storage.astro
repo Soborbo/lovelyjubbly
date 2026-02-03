@@ -2,53 +2,375 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import CallbackForm from '../components/CallbackForm.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "European Removals from Bristol",
+  "description": "International removal services from Bristol to Europe. Door-to-door moves, customs documentation handled, storage during transition available.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Painless Removals",
+    "telephone": "01172 870 082"
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "France" },
+    { "@type": "Country", "name": "Spain" },
+    { "@type": "Country", "name": "Portugal" },
+    { "@type": "Country", "name": "Germany" },
+    { "@type": "Country", "name": "Italy" },
+    { "@type": "Country", "name": "Netherlands" }
+  ],
+  "serviceType": "International Removal"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lovelyjubblyremovals.co.uk/" },
+    { "@type": "ListItem", "position": 2, "name": "European Removals", "item": "https://lovelyjubblyremovals.co.uk/european-removals-and-storage/" }
+  ]
+};
 ---
 <BaseLayout
-  title="European Removals from Bristol | Lovely Jubbly Removals"
-  description="International removal services from Bristol to Europe. Professional help with overseas moves, customs documentation, and storage during transition."
+  title="European Removals from Bristol | International Moving Services | Lovely Jubbly Removals"
+  description="International removal services from Bristol to Europe. Moving to France, Spain, Portugal, Germany, Italy or beyond? Door-to-door service, customs handled, storage available. Call 01172 870 082."
   canonical="/european-removals-and-storage/"
+  schema={[serviceSchema, breadcrumbSchema]}
 >
   <Hero
     title="European Removals from Bristol"
-    subtitle="Moving abroad? We can help."
+    subtitle="Moving abroad? We can help with your international relocation."
     showCtas={true}
   />
 
-  <section class="py-16">
+  <!-- Introduction -->
+  <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="prose prose-lg max-w-none">
-        <p class="text-xl text-gray-600 mb-8">
-          Relocating to Europe involves more than just transport. International moves require careful planning, proper documentation, and coordination across borders — expertise that goes beyond domestic removals.
-        </p>
+      <p class="text-xl text-gray-600 mb-8">
+        Relocating to Europe involves more than just transport. International moves require careful planning, proper documentation, and coordination across borders — expertise that goes beyond domestic removals. Whether you're retiring to Spain, taking a job in Germany, or moving your family to France, professional international movers handle the complexities so you can focus on your new adventure.
+      </p>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mb-4">Countries Served</h2>
-        <p>
-          European removal services cover destinations across the continent. Popular routes from Bristol include France, Spain, Portugal, Germany, Italy, and the Netherlands. Whether you're moving to a major city or a rural village, professional international movers have networks and experience throughout Europe to ensure your belongings arrive safely.
-        </p>
+  <!-- Countries Served -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Popular European Destinations</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="text-3xl mb-3">🇫🇷</div>
+          <h3 class="font-semibold text-lg mb-2">France</h3>
+          <p class="text-gray-600 text-sm">Paris, Lyon, Marseille, Bordeaux, Nice, Toulouse, and throughout rural France. Popular for retirement and lifestyle moves.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="text-3xl mb-3">🇪🇸</div>
+          <h3 class="font-semibold text-lg mb-2">Spain</h3>
+          <p class="text-gray-600 text-sm">Costa del Sol, Barcelona, Madrid, Valencia, Alicante, and the Balearic Islands. The UK's most popular expat destination.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="text-3xl mb-3">🇵🇹</div>
+          <h3 class="font-semibold text-lg mb-2">Portugal</h3>
+          <p class="text-gray-600 text-sm">Algarve, Lisbon, Porto, Silver Coast. Growing in popularity for retirees and remote workers.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="text-3xl mb-3">🇩🇪</div>
+          <h3 class="font-semibold text-lg mb-2">Germany</h3>
+          <p class="text-gray-600 text-sm">Berlin, Munich, Frankfurt, Hamburg, Düsseldorf. Often for work relocations and corporate moves.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="text-3xl mb-3">🇮🇹</div>
+          <h3 class="font-semibold text-lg mb-2">Italy</h3>
+          <p class="text-gray-600 text-sm">Tuscany, Rome, Milan, Lake Como, Sicily, Sardinia. Popular for lifestyle and retirement moves.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="text-3xl mb-3">🇳🇱</div>
+          <h3 class="font-semibold text-lg mb-2">Netherlands</h3>
+          <p class="text-gray-600 text-sm">Amsterdam, Rotterdam, The Hague, Utrecht. Common for corporate and professional relocations.</p>
+        </div>
+      </div>
+      <p class="text-center mt-8 text-gray-600">
+        We also cover Belgium, Ireland, Switzerland, Austria, Denmark, Sweden, Poland, Czech Republic, Greece, Cyprus, and more.
+      </p>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">What's Involved in International Moves</h2>
-        <p>
-          International relocations require more planning than domestic moves. The timeline is longer — typically several weeks from booking to delivery. Your belongings may travel by road, sea, or a combination. Groupage services (sharing transport with other shipments) offer cost savings for smaller moves, while dedicated vehicles suit full household contents.
+  <!-- What's Involved -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">What's Involved in an International Move</h2>
+      <div class="prose prose-lg max-w-none text-gray-600">
+        <p class="mb-6">
+          International relocations require more planning than domestic moves. The timeline is longer — typically several weeks from booking to delivery — and there are additional considerations around customs, documentation, and logistics.
         </p>
+        <div class="grid md:grid-cols-2 gap-6 mt-8">
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <h3 class="font-semibold text-gray-900 mb-3">Transport Options</h3>
+            <ul class="space-y-2 text-sm">
+              <li><strong>Road transport:</strong> Most common for Europe. Door-to-door service via dedicated or shared vehicles.</li>
+              <li><strong>Groupage:</strong> Share container space with other shipments. Cost-effective for smaller moves.</li>
+              <li><strong>Dedicated vehicle:</strong> Entire van for your belongings. Faster, more flexible timing.</li>
+            </ul>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <h3 class="font-semibold text-gray-900 mb-3">Timeline</h3>
+            <ul class="space-y-2 text-sm">
+              <li><strong>Dedicated loads:</strong> 3-7 days depending on destination</li>
+              <li><strong>Groupage services:</strong> 1-3 weeks as transport schedules align</li>
+              <li><strong>Planning:</strong> Book 4-8 weeks ahead for best availability</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Documentation and Customs</h2>
-        <p>
-          Since Brexit, moving personal effects to EU countries involves customs paperwork. You'll need detailed inventories, proof of residence, and various declarations. Experienced international movers handle this documentation, ensuring compliance and preventing delays at borders. They know which items have restrictions and what paperwork each destination country requires.
+  <!-- Post-Brexit Documentation -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Post-Brexit Documentation</h2>
+      <div class="bg-white p-8 rounded-xl shadow-sm mb-8">
+        <p class="text-gray-600 mb-6">
+          Since Brexit, moving personal effects to EU countries involves customs paperwork. This isn't as daunting as it sounds — experienced international movers handle this daily — but it's important to understand what's required.
         </p>
-
-        <h2 class="text-2xl font-bold mt-8 mb-4">Storage During Transition</h2>
-        <p>
-          International moves often involve timing gaps — your UK property completes before your European home is ready, or vice versa. Storage solutions bridge these gaps, keeping your belongings safe and accessible. Flexible storage terms mean you only pay for what you need, whether that's a few weeks or several months.
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-semibold text-lg mb-4">Documentation Typically Required:</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start gap-2">
+                <span class="text-primary">•</span>
+                <span>Detailed inventory of all items being moved</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary">•</span>
+                <span>Proof of residence in destination country</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary">•</span>
+                <span>Passport copies for all moving parties</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary">•</span>
+                <span>UK residency proof (utility bills, etc.)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary">•</span>
+                <span>Customs declarations (T1 document)</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-4">Items With Restrictions:</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">!</span>
+                <span>Food and plant products (strict regulations)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">!</span>
+                <span>Alcohol and tobacco (allowances apply)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">!</span>
+                <span>Vehicles (separate import process)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">!</span>
+                <span>Pets (health certificates required)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">!</span>
+                <span>Medications (prescription documentation)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-r-lg">
+        <p class="text-gray-700">
+          <strong>Don't worry:</strong> Experienced international movers prepare all customs documentation for you. They know which items have restrictions and what paperwork each destination country requires. You provide the basic information; they handle the rest.
         </p>
+      </div>
+    </div>
+  </section>
 
-        <div class="bg-blue-50 border-l-4 border-primary p-6 mt-8 rounded-r-lg">
-          <p class="font-semibold text-primary mb-2">Planning a European move?</p>
-          <p class="text-gray-700">
-            <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">
-              Painless Removals
-            </a>
-            can coordinate your international relocation. Contact them for expert advice and a quote.
-          </p>
+  <!-- Storage During Transition -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Storage During Transition</h2>
+      <div class="prose prose-lg max-w-none text-gray-600">
+        <p class="mb-6">
+          International moves often involve timing gaps. Your UK property might complete before your European home is ready, or vice versa. Storage solutions bridge these gaps, keeping your belongings safe and accessible until you're ready to receive them.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <div class="bg-gray-50 p-6 rounded-xl text-center">
+            <div class="text-3xl mb-3">🇬🇧</div>
+            <h3 class="font-semibold mb-2">UK Storage</h3>
+            <p class="text-sm text-gray-600">Store belongings in Bristol before shipping once your new home is ready.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-xl text-center">
+            <div class="text-3xl mb-3">🚚</div>
+            <h3 class="font-semibold mb-2">In-Transit</h3>
+            <p class="text-sm text-gray-600">Flexible delivery windows to coordinate with property completions.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-xl text-center">
+            <div class="text-3xl mb-3">🏠</div>
+            <h3 class="font-semibold mb-2">Destination Storage</h3>
+            <p class="text-sm text-gray-600">Network of partners can hold items at your destination if needed.</p>
+          </div>
+        </div>
+        <p class="mt-8">
+          Flexible storage terms mean you only pay for what you need, whether that's a few weeks while final paperwork completes or several months during an extended transition period.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Moving Checklist -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">International Moving Checklist</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-4 rounded-lg shadow-sm flex items-start gap-3">
+          <span class="text-primary font-bold">8+ weeks</span>
+          <div>
+            <p class="font-medium">Research and book your removal company</p>
+            <p class="text-sm text-gray-600">Get quotes, check reviews, verify they handle your destination country.</p>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm flex items-start gap-3">
+          <span class="text-primary font-bold">6 weeks</span>
+          <div>
+            <p class="font-medium">Begin decluttering</p>
+            <p class="text-sm text-gray-600">International moves cost more than domestic — only take what you need.</p>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm flex items-start gap-3">
+          <span class="text-primary font-bold">4 weeks</span>
+          <div>
+            <p class="font-medium">Gather documentation</p>
+            <p class="text-sm text-gray-600">Passport copies, residency proof, property documents for both ends.</p>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm flex items-start gap-3">
+          <span class="text-primary font-bold">3 weeks</span>
+          <div>
+            <p class="font-medium">Create detailed inventory</p>
+            <p class="text-sm text-gray-600">List everything you're taking. Required for customs; useful for insurance.</p>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm flex items-start gap-3">
+          <span class="text-primary font-bold">2 weeks</span>
+          <div>
+            <p class="font-medium">Arrange pet transport (if applicable)</p>
+            <p class="text-sm text-gray-600">Pet passports, vet checks, and transport arrangements need lead time.</p>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm flex items-start gap-3">
+          <span class="text-primary font-bold">1 week</span>
+          <div>
+            <p class="font-medium">Final preparations</p>
+            <p class="text-sm text-gray-600">Confirm dates, arrange key handovers, pack essentials separately.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Costs -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">What Affects European Removal Costs?</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-semibold mb-3">Volume of Belongings</h3>
+          <p class="text-gray-600 text-sm">The single biggest factor. Full house contents cost more than a few boxes. Measured in cubic metres or by vehicle size needed.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-semibold mb-3">Distance & Destination</h3>
+          <p class="text-gray-600 text-sm">Northern France is cheaper to reach than southern Spain or Greek islands. Remote locations cost more than major cities.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-semibold mb-3">Service Level</h3>
+          <p class="text-gray-600 text-sm">Self-pack vs. professional packing. Basic delivery vs. full unpacking. More service = higher cost but less stress.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-semibold mb-3">Access at Both Ends</h3>
+          <p class="text-gray-600 text-sm">Ground floor apartment to villa is simpler than 3rd floor walk-up to remote farmhouse. Difficult access adds time and cost.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-semibold mb-3">Groupage vs. Dedicated</h3>
+          <p class="text-gray-600 text-sm">Sharing transport (groupage) saves money but takes longer. Dedicated vehicle is faster but costs more.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-semibold mb-3">Timing</h3>
+          <p class="text-gray-600 text-sm">Summer months (June-September) are busiest for European moves. Spring and autumn often offer better availability and rates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Use Specialists -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Why Use International Removal Specialists?</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4 items-start">
+          <div class="bg-green-100 text-green-600 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+            <span>✓</span>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-1">Customs expertise</h3>
+            <p class="text-gray-600">They know the paperwork, the requirements, the potential pitfalls. No delays at borders due to missing documentation.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="bg-green-100 text-green-600 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+            <span>✓</span>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-1">European network</h3>
+            <p class="text-gray-600">Partners and agents throughout Europe who understand local requirements and can handle delivery.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="bg-green-100 text-green-600 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+            <span>✓</span>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-1">Proper insurance</h3>
+            <p class="text-gray-600">Coverage that works across borders, including marine insurance for sea crossings if applicable.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="bg-green-100 text-green-600 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+            <span>✓</span>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-1">End-to-end management</h3>
+            <p class="text-gray-600">One company handles everything from your Bristol door to your European door. No handoffs, no confusion.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-blue-50 border-l-4 border-primary p-8 rounded-r-lg">
+        <h2 class="text-2xl font-bold text-primary mb-4">Planning a European Move from Bristol?</h2>
+        <p class="text-gray-700 mb-6">
+          <a href="https://painlessremovals.co.uk" rel="nofollow" class="text-primary hover:underline font-medium">Painless Removals</a> can coordinate your international relocation. From packing in Bristol to delivery at your European destination, they handle the logistics, paperwork, and heavy lifting. Contact them for expert advice and a quote tailored to your move.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="tel:01172870082" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+            Call 01172 870 082
+          </a>
+          <a href="#callback-form" class="inline-flex items-center justify-center px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-red-700 transition-colors">
+            Request Callback
+          </a>
         </div>
       </div>
     </div>
