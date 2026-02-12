@@ -124,6 +124,7 @@ const success = url.searchParams.get('success') === 'true';
                 id="name"
                 name="name"
                 required
+                maxlength="100"
                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
                 placeholder="Your name"
               />
@@ -138,6 +139,9 @@ const success = url.searchParams.get('success') === 'true';
                 id="phone"
                 name="phone"
                 required
+                maxlength="20"
+                pattern="[\d\s\+\-\(\)]{7,20}"
+                title="Please enter a valid phone number"
                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
                 placeholder="Your phone number"
               />
@@ -180,10 +184,14 @@ const success = url.searchParams.get('success') === 'true';
                 id="message"
                 name="message"
                 rows="5"
+                maxlength="2000"
                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
                 placeholder="Tell us about your removal needs..."
               ></textarea>
             </div>
+
+            <!-- Cloudflare Turnstile CAPTCHA -->
+            <div class="cf-turnstile" data-sitekey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'} data-theme="light"></div>
 
             <button
               type="submit"
@@ -202,4 +210,6 @@ const success = url.searchParams.get('success') === 'true';
       </div>
     </div>
   </section>
+
+  <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </BaseLayout>
