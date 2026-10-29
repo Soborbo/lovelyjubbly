@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lovelyjubbly",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // The middleware (410s for retired URLs) must see every request, as it did on Pages.
+    "run_worker_first": true,
+    // Pages served the homepage for unknown paths (no 404.html); kept as-is for the move.
+    "not_found_handling": "single-page-application"
+  },
+  "routes": [
+    { "pattern": "lovelyjubblyremovals.co.uk", "custom_domain": true }
+  ],
+  "observability": { "enabled": true }
+  // Secrets (wrangler secret put): TURNSTILE_SECRET_KEY, RESEND_API_KEY.
+  // Build variable (Workers Builds): PUBLIC_TURNSTILE_SITE_KEY.
+}
